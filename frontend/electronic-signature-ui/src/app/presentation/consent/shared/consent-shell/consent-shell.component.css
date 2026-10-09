@@ -1,0 +1,858 @@
+/* =========================================================
+   TEXAS YOUTH ANIMAL SHOWCASE
+   APP SHELL
+   Responsive Full-Width Layout
+   ========================================================= */
+
+:host {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+
+  font-family: 'Segoe UI', Arial, sans-serif;
+
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MAIN APP SHELL
+   ========================================================= */
+
+.app-shell {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #f3f2ef;
+
+  color: #173b5e;
+}
+
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.top-bar {
+  width: 100%;
+  min-height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 32px;
+
+  background: #0d2b4e;
+  color: #fff;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  position: relative;
+  z-index: 10;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  min-width: 0;
+}
+
+.texas-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: #f5c542;
+
+  font-size: 1.45rem;
+}
+
+.brand h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 1.2rem;
+  font-weight: 700;
+
+  line-height: 1.25;
+}
+
+.brand p {
+  margin: 3px 0 0;
+
+  color: #b9c9dd;
+
+  font-size: 0.8rem;
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+   ========================================================= */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+}
+
+
+/* Badge */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 34px;
+
+  padding: 6px 15px;
+
+  border-radius: 999px;
+
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.badge-junior {
+  background: #fde3e9;
+  color: #c0396b;
+}
+
+.badge-open {
+  background: #dcecff;
+  color: #0f6bbd;
+}
+
+
+/* User chip */
+
+.user-chip {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  font-size: 0.88rem;
+}
+
+.user-chip .avatar {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+  color: #0d2b4e;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.user-chip strong {
+  display: block;
+
+  font-size: 0.88rem;
+  line-height: 1.25;
+}
+
+.user-chip small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #b9c9dd;
+
+  font-size: 0.72rem;
+  font-weight: 400;
+}
+
+
+/* Logout */
+
+.logout-btn {
+  min-height: 40px;
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+
+  background: transparent;
+
+  color: #fff;
+
+  border-radius: 8px;
+
+  padding: 0 17px;
+
+  font-family: inherit;
+
+  font-size: 0.84rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+.body-shell {
+  width: 100%;
+
+  display: flex;
+
+  min-height: calc(100vh - 72px);
+
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+  width: 240px;
+
+  flex: 0 0 240px;
+
+  background: #ffffff;
+
+  border-right: 1px solid rgba(16, 38, 68, 0.09);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 22px 0;
+
+  min-height: calc(100vh - 72px);
+}
+
+
+/* Navigation */
+
+.sidebar nav {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.sidebar nav a {
+  min-height: 48px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 24px;
+
+  color: #40546b;
+
+  text-decoration: none;
+
+  font-size: 0.94rem;
+  font-weight: 500;
+
+  border-left: 3px solid transparent;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.sidebar nav a:hover {
+  background: #f4f8fb;
+
+  color: #0f6bbd;
+}
+
+.sidebar nav a.active {
+  background: #eaf3fc;
+
+  color: #0f6bbd;
+
+  font-weight: 700;
+
+  border-left-color: #0f6bbd;
+}
+
+
+/* Sidebar footer */
+
+.sidebar-footer {
+  padding: 18px 24px;
+
+  border-top: 1px solid #edf0f3;
+
+  color: #8fa0b3;
+
+  font-size: 0.8rem;
+
+  line-height: 1.5;
+}
+
+.sidebar-footer p {
+  margin: 0;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+/*
+   IMPORTANT:
+   Do NOT use max-width: 1080px here.
+   This allows the consent form to use the available screen.
+*/
+
+.content {
+  flex: 1;
+
+  width: calc(100% - 240px);
+
+  min-width: 0;
+
+  padding: 30px 36px 55px;
+
+  max-width: none;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   PAGE HEADING
+   ========================================================= */
+
+.content-heading {
+  width: 100%;
+
+  margin-bottom: 20px;
+}
+
+.content-heading h2 {
+  margin: 0 0 4px;
+
+  color: #0d2b4e;
+
+  font-size: 1.65rem;
+
+  font-weight: 700;
+
+  line-height: 1.3;
+}
+
+.content-heading p {
+  margin: 0;
+
+  color: #6a7a8b;
+
+  font-size: 0.92rem;
+}
+
+
+/* =========================================================
+   STEPPER
+   ========================================================= */
+
+.stepper {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px 12px;
+
+  list-style: none;
+
+  margin: 0 0 28px;
+
+  padding: 0;
+}
+
+.stepper li {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #8fa0b3;
+
+  font-size: 0.84rem;
+
+  white-space: nowrap;
+}
+
+.step-circle {
+  width: 28px;
+  height: 28px;
+
+  border-radius: 50%;
+
+  background: #e2e8ef;
+
+  color: #6a7a8b;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  font-weight: 700;
+
+  font-size: 0.78rem;
+}
+
+.stepper li.active .step-circle {
+  background: #0f6bbd;
+
+  color: #fff;
+}
+
+.stepper li.done .step-circle {
+  background: #1f9d63;
+
+  color: #fff;
+}
+
+.stepper li.active .step-label {
+  color: #0d2b4e;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   STEP BODY
+   ========================================================= */
+
+.step-body {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   FOOTER NAVIGATION
+   ========================================================= */
+
+.footer-nav {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 28px;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn-outline,
+.btn-primary {
+  min-height: 48px;
+
+  border-radius: 8px;
+
+  padding: 0 22px;
+
+  font-family: inherit;
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+
+/* Back */
+
+.btn-outline {
+  border: 1px solid #c3d0dc;
+
+  background: #ffffff;
+
+  color: #33445a;
+}
+
+.btn-outline:hover {
+  background: #f4f7fa;
+
+  border-color: #9eb2c5;
+
+  transform: translateY(-1px);
+}
+
+
+/* Next / Submit */
+
+.btn-primary {
+  border: 1px solid #0f6bbd;
+
+  background: #0f6bbd;
+
+  color: #ffffff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #0c5d9f;
+
+  border-color: #0c5d9f;
+
+  transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+  background: #a9c6e0;
+
+  border-color: #a9c6e0;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1400px) {
+
+  .top-bar {
+    min-height: 76px;
+
+    padding-left: 38px;
+    padding-right: 38px;
+  }
+
+  .sidebar {
+    width: 250px;
+
+    flex-basis: 250px;
+  }
+
+  .content {
+    width: calc(100% - 250px);
+
+    padding: 34px 42px 60px;
+  }
+
+  .content-heading h2 {
+    font-size: 1.8rem;
+  }
+
+  .content-heading p {
+    font-size: 0.95rem;
+  }
+
+  .stepper li {
+    font-size: 0.87rem;
+  }
+
+  .step-circle {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+
+/* =========================================================
+   LAPTOP
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+  .top-bar {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .content {
+    padding: 26px 28px 50px;
+  }
+
+  .sidebar {
+    width: 220px;
+
+    flex-basis: 220px;
+  }
+
+  .content {
+    width: calc(100% - 220px);
+  }
+}
+
+
+/* =========================================================
+   SMALL LAPTOP / TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .user-chip {
+    display: none;
+  }
+
+  .sidebar {
+    width: 190px;
+
+    flex-basis: 190px;
+  }
+
+  .content {
+    width: calc(100% - 190px);
+
+    padding: 24px 22px 45px;
+  }
+
+  .sidebar nav a {
+    padding-left: 18px;
+    padding-right: 18px;
+
+    font-size: 0.88rem;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  .top-bar {
+    min-height: 66px;
+
+    padding: 10px 16px;
+  }
+
+  .brand h1 {
+    font-size: 1rem;
+  }
+
+  .brand p {
+    font-size: 0.7rem;
+  }
+
+  .texas-icon {
+    width: 36px;
+    height: 36px;
+
+    font-size: 1.2rem;
+  }
+
+  .badge {
+    display: none;
+  }
+
+  .sidebar {
+    width: 68px;
+
+    flex-basis: 68px;
+
+    padding-top: 18px;
+  }
+
+  .sidebar nav a {
+    height: 48px;
+
+    justify-content: center;
+
+    padding: 0;
+
+    font-size: 0;
+
+    border-left: none;
+    border-right: 3px solid transparent;
+  }
+
+  .sidebar nav a.active {
+    border-left: none;
+
+    border-right-color: #0f6bbd;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .content {
+    width: calc(100% - 68px);
+
+    padding: 22px 18px 40px;
+  }
+
+  .content-heading h2 {
+    font-size: 1.4rem;
+  }
+
+  .stepper {
+    overflow-x: auto;
+
+    flex-wrap: nowrap;
+
+    padding-bottom: 5px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+  .top-bar {
+    min-height: 62px;
+
+    padding: 9px 12px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand h1 {
+    font-size: 0.88rem;
+  }
+
+  .brand p {
+    display: none;
+  }
+
+  .texas-icon {
+    width: 32px;
+    height: 32px;
+
+    font-size: 1rem;
+  }
+
+  .logout-btn {
+    min-height: 34px;
+
+    padding: 0 11px;
+
+    font-size: 0.75rem;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .content {
+    width: 100%;
+
+    padding: 18px 12px 35px;
+  }
+
+  .content-heading {
+    margin-bottom: 16px;
+  }
+
+  .content-heading h2 {
+    font-size: 1.25rem;
+  }
+
+  .content-heading p {
+    font-size: 0.78rem;
+  }
+
+  .stepper {
+    gap: 8px;
+
+    margin-bottom: 20px;
+  }
+
+  .stepper li {
+    font-size: 0.7rem;
+
+    gap: 5px;
+  }
+
+  .step-circle {
+    width: 24px;
+    height: 24px;
+
+    font-size: 0.68rem;
+  }
+
+  .footer-nav {
+    margin-top: 20px;
+  }
+
+  .btn-outline,
+  .btn-primary {
+    min-height: 44px;
+
+    padding: 0 16px;
+
+    font-size: 0.82rem;
+  }
+}

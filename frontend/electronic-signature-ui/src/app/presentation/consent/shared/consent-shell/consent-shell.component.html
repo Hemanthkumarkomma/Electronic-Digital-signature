@@ -1,0 +1,155 @@
+<div class="app-shell">
+  <header class="top-bar">
+    <div class="brand">
+      <span class="texas-icon">&#9733;</span>
+      <div>
+        <h1>Texas Youth Animal Showcase</h1>
+        <p>Educate &bull; Exhibit &bull; Inspire</p>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <span
+        class="badge"
+        [class.badge-junior]="badgeVariant === 'junior'"
+        [class.badge-open]="badgeVariant === 'open'"
+      >
+        {{ badgeLabel }}
+      </span>
+
+      <div class="user-chip">
+        <span class="avatar">&#128100;</span>
+        <div>
+          <strong>{{ currentUser?.fullName || 'Exhibitor' }}</strong>
+          <small>{{ badgeLabel }}</small>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="logout-btn"
+        (click)="logout()"
+      >
+        Logout
+      </button>
+    </div>
+  </header>
+
+  <div class="body-shell">
+
+    <aside class="sidebar">
+  <nav>
+
+    <!-- Dashboard -->
+    <a
+      routerLink="/dashboard"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      &#8962; Dashboard
+    </a>
+
+    <!-- Consent Form -->
+    <a
+      routerLink="/consent/open"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      &#128196; Consent Form
+    </a>
+
+    <!-- My Submissions -->
+    <a
+      routerLink="/my-submissions"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      &#128190; My Submissions
+    </a>
+
+    <!-- Profile -->
+    <a
+      routerLink="/profile"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      &#128100; Profile
+    </a>
+
+    <!-- Help -->
+    <a routerLink="/dashboard">
+      &#10067; Help
+    </a>
+
+  </nav>
+
+  <div class="sidebar-footer">
+    <p>
+      Supporting Youth Today for a Stronger Tomorrow.
+    </p>
+  </div>
+</aside>
+
+    <main class="content">
+
+      <div class="content-heading">
+        <div>
+          <h2>{{ formTitle }}</h2>
+          <p>{{ contentSubtitle }}</p>
+        </div>
+      </div>
+
+      <ol class="stepper" *ngIf="showStepper">
+
+        <li
+          *ngFor="let step of steps; let i = index"
+          [class.active]="i + 1 === currentStep"
+          [class.done]="i + 1 < currentStep"
+        >
+          <span class="step-circle">
+            {{ i + 1 }}
+          </span>
+
+          <span class="step-label">
+            {{ step }}
+          </span>
+        </li>
+
+      </ol>
+
+      <div class="step-body">
+        <ng-content></ng-content>
+      </div>
+
+      <div class="footer-nav" *ngIf="showFooterNavigation">
+
+        <button
+          type="button"
+          class="btn-outline"
+          *ngIf="showBack"
+          (click)="onBack()"
+        >
+          &#8592; Back
+        </button>
+
+        <span *ngIf="!showBack"></span>
+
+        <button
+          type="button"
+          class="btn-primary"
+          [disabled]="nextDisabled"
+          (click)="onNext()"
+        >
+          {{ isLastStep ? 'Submit' : nextLabel }}
+
+          <span *ngIf="!isLastStep">
+            &#8594;
+          </span>
+        </button>
+
+      </div>
+
+    </main>
+
+  </div>
+</div>

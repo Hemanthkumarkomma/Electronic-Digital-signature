@@ -1,0 +1,412 @@
+{
+  "backend/ElectronicSignature.API/ElectronicSignature.API.csproj": {
+    "mtime": 1789972570.3856251,
+    "ast_hash": "8bd6dd5aeec1e520371239376692f26e",
+    "semantic_hash": ""
+  },
+  "backend/ElectronicSignature.API/Program.cs": {
+    "mtime": 1789971716.2601776,
+    "ast_hash": "138946d95fcf2c2da4fa96d8f3be6577",
+    "semantic_hash": ""
+  },
+  "backend/ElectronicSignature.API/Properties/launchSettings.json": {
+    "mtime": 1789636806.6351032,
+    "ast_hash": "202a2e6fe96ab4a54b140f12777907ef",
+    "semantic_hash": "202a2e6fe96ab4a54b140f12777907ef"
+  },
+  "backend/ElectronicSignature.API/appsettings.Development.json": {
+    "mtime": 1789728174.3010592,
+    "ast_hash": "341afe6f46d35b55232caa02e128a6ac",
+    "semantic_hash": ""
+  },
+  "backend/ElectronicSignature.API/appsettings.json": {
+    "mtime": 1789728163.0298154,
+    "ast_hash": "d02066108118a86be460ea005f5e2d9d",
+    "semantic_hash": ""
+  },
+  "backend/ElectronicSignature.API/bin/Debug/net10.0/ElectronicSignature.API.deps.json": {
+    "mtime": 1789972588.1802719,
+    "ast_hash": "111f9ff5ac5f99639de99089b8a1414e",
+    "semantic_hash": ""
+  },
+  "backend/ElectronicSignature.API/bin/Debug/net10.0/ElectronicSignature.API.runtimeconfig.json": {
+    "mtime": 1789972588.2526898,
+    "ast_hash": "37595336dae30b037bd95e5047b95825",
+    "semantic_hash": ""
+  },
+  "backend/ElectronicSignature.API/bin/Debug/net10.0/ElectronicSignature.API.staticwebassets.endpoints.json": {
+    "mtime": 1789636987.581893,
+    "ast_hash": "f44ca44dd881261586b84442f2201257",
+    "semantic_hash": "f44ca44dd881261586b84442f2201257"
+  },
+  "backend/ElectronicSignature.API/bin/Debug/net10.0/appsettings.Development.json": {
+    "mtime": 1789728174.3010592,
+    "ast_hash": "341afe6f46d35b55232caa02e128a6ac",
+    "semantic_hash": ""
+  },
+  "backend/ElectronicSignature.API/bin/Debug/net10.0/appsettings.json": {
+    "mtime": 1789728163.0298154,
+    "ast_hash": "d02066108118a86be460ea005f5e2d9d",
+    "semantic_hash": ""
+  },
+  "backend/ElectronicSignature.API/obj/Debug/net10.0/.NETCoreApp,Version=v10.0.AssemblyAttributes.cs": {
+    "mtime": 1789636965.6998508,
+    "ast_hash": "8479efdf06e2d26e053d27ffa6964185",
+    "semantic_hash": "8479efdf06e2d26e053d27ffa6964185"
+  },
+  "backend/ElectronicSignature.API/obj/Debug/net10.0/ElectronicSignature.API.AssemblyInfo.cs": {
+    "mtime": 1789636966.4555883,
+    "ast_hash": "5492c0e2f718b60a1024702248d4b1e2",
+    "semantic_hash": "5492c0e2f718b60a1024702248d4b1e2"
+  },
+  "backend/ElectronicSignature.API/obj/Debug/net10.0/ElectronicSignature.API.GlobalUsings.g.cs": {
+    "mtime": 1789636964.3601894,
+    "ast_hash": "5b3fdaae7b59d230d7d136eab049a98a",
+    "semantic_hash": "5b3fdaae7b59d230d7d136eab049a98a"
+  },
+  "backend/ElectronicSignature.API/obj/Debug/net10.0/ElectronicSignature.API.MvcApplicationPartsAssemblyInfo.cs": {
+    "mtime": 1789972585.7102885,
+    "ast_hash": "904a0f2dfe7deafe1508e17c8c31c109",
+    "semantic_hash": "904a0f2dfe7deafe1508e17c8c31c109"
+  },
+  "backend/ElectronicSignature.API/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json": {
+    "mtime": 1789972627.2079327,
+    "ast_hash": "4f4e7631440907beaff6f86b1ff314f4",
+    "semantic_hash": ""
+  },
+  "backend/ElectronicSignature.API/obj/Debug/net10.0/rjsmrazor.dswa.cache.json": {
+    "mtime": 1789972627.2079327,
+    "ast_hash": "e7dc67eb81a8f6dd186f3740d42063d4",
+    "semantic_hash": ""
+  },
+  "backend/ElectronicSignature.API/obj/Debug/net10.0/rpswa.dswa.cache.json": {
+    "mtime": 1789728540.0212,
+    "ast_hash": "9afa8db280c3157c4774a2e450043b3b",
+    "semantic_hash": ""
+  },
+  "backend/ElectronicSignature.API/obj/Debug/net10.0/staticwebassets.build.endpoints.json": {
+    "mtime": 1789636987.581893,
+    "ast_hash": "f44ca44dd881261586b84442f2201257",
+    "semantic_hash": "f44ca44dd881261586b84442f2201257"
+  },
+  "backend/ElectronicSignature.API/obj/Debug/net10.0/staticwebassets.build.json": {
+    "mtime": 1789636987.5702121,
+    "ast_hash": "7c615aef47de6448bf06d7868314ef62",
+    "semantic_hash": "7c615aef47de6448bf06d7868314ef62"
+  },
+  "backend/ElectronicSignature.API/obj/ElectronicSignature.API.csproj.nuget.dgspec.json": {
+    "mtime": 1789972575.4236805,
+    "ast_hash": "84113aa6a2f78653b5684ef47fa34179",
+    "semantic_hash": ""
+  },
+  "backend/ElectronicSignature.API/obj/project.assets.json": {
+    "mtime": 1789972575.412328,
+    "ast_hash": "579d93624449c5d7a442f73f1232fe61",
+    "semantic_hash": ""
+  },
+  "frontend/cdk-drag-drop-practice/.vscode/extensions.json": {
+    "mtime": 1789639838.7972617,
+    "ast_hash": "66fd9e60d4633b6099fe02e06a7075ea",
+    "semantic_hash": "66fd9e60d4633b6099fe02e06a7075ea"
+  },
+  "frontend/cdk-drag-drop-practice/.vscode/launch.json": {
+    "mtime": 1789639838.7982578,
+    "ast_hash": "430386a2f03e9d559664c196344c121b",
+    "semantic_hash": "430386a2f03e9d559664c196344c121b"
+  },
+  "frontend/cdk-drag-drop-practice/.vscode/tasks.json": {
+    "mtime": 1789639838.7997403,
+    "ast_hash": "cb7ed9a56930402d9059ea5a9773d60e",
+    "semantic_hash": "cb7ed9a56930402d9059ea5a9773d60e"
+  },
+  "frontend/cdk-drag-drop-practice/angular.json": {
+    "mtime": 1789640071.6966588,
+    "ast_hash": "8683035d9b422e2baf43a30d050f50a9",
+    "semantic_hash": "8683035d9b422e2baf43a30d050f50a9"
+  },
+  "frontend/cdk-drag-drop-practice/package.json": {
+    "mtime": 1789640089.3982427,
+    "ast_hash": "93c46117af9c8609d0b4c0a51119009a",
+    "semantic_hash": "93c46117af9c8609d0b4c0a51119009a"
+  },
+  "frontend/cdk-drag-drop-practice/src/app/app.config.ts": {
+    "mtime": 1789639838.7997403,
+    "ast_hash": "1a9a668b130542d5c52170a21db1eb61",
+    "semantic_hash": "1a9a668b130542d5c52170a21db1eb61"
+  },
+  "frontend/cdk-drag-drop-practice/src/app/app.routes.ts": {
+    "mtime": 1789639838.7997403,
+    "ast_hash": "41e4bac7a1d7cd48f4d03907407942d3",
+    "semantic_hash": "41e4bac7a1d7cd48f4d03907407942d3"
+  },
+  "frontend/cdk-drag-drop-practice/src/app/app.spec.ts": {
+    "mtime": 1789639838.7997403,
+    "ast_hash": "820f07b496989861313d5141aa142b58",
+    "semantic_hash": "820f07b496989861313d5141aa142b58"
+  },
+  "frontend/cdk-drag-drop-practice/src/app/app.ts": {
+    "mtime": 1789641825.363417,
+    "ast_hash": "65dcc2b0e9461a7a05ff7f66de4134b0",
+    "semantic_hash": "65dcc2b0e9461a7a05ff7f66de4134b0"
+  },
+  "frontend/cdk-drag-drop-practice/src/app/drop-list-practice/drop-list-practice.spec.ts": {
+    "mtime": 1789641617.5478785,
+    "ast_hash": "d7b7b1f66212f0ca492173cb45045f8f",
+    "semantic_hash": "d7b7b1f66212f0ca492173cb45045f8f"
+  },
+  "frontend/cdk-drag-drop-practice/src/app/drop-list-practice/drop-list-practice.ts": {
+    "mtime": 1789641734.6899204,
+    "ast_hash": "90d5632e518e49c6730d040deadce265",
+    "semantic_hash": "90d5632e518e49c6730d040deadce265"
+  },
+  "frontend/cdk-drag-drop-practice/src/main.ts": {
+    "mtime": 1789639838.7997403,
+    "ast_hash": "1289536d6d8f94242a4ffc598d094633",
+    "semantic_hash": "1289536d6d8f94242a4ffc598d094633"
+  },
+  "frontend/cdk-drag-drop-practice/tsconfig.app.json": {
+    "mtime": 1789639838.7952638,
+    "ast_hash": "e36d55dc3a81c35d0328a257103d6d3d",
+    "semantic_hash": "e36d55dc3a81c35d0328a257103d6d3d"
+  },
+  "frontend/cdk-drag-drop-practice/tsconfig.json": {
+    "mtime": 1789639838.7867057,
+    "ast_hash": "53bc94dc8fdca030fe291132353484a9",
+    "semantic_hash": "53bc94dc8fdca030fe291132353484a9"
+  },
+  "frontend/cdk-drag-drop-practice/tsconfig.spec.json": {
+    "mtime": 1789639838.796265,
+    "ast_hash": "9e61a5663cdfef3c963a3595ac1a7813",
+    "semantic_hash": "9e61a5663cdfef3c963a3595ac1a7813"
+  },
+  "frontend/electronic-signature-ui/.vscode/extensions.json": {
+    "mtime": 1789638080.1376631,
+    "ast_hash": "66fd9e60d4633b6099fe02e06a7075ea",
+    "semantic_hash": "66fd9e60d4633b6099fe02e06a7075ea"
+  },
+  "frontend/electronic-signature-ui/.vscode/launch.json": {
+    "mtime": 1789638080.1376631,
+    "ast_hash": "430386a2f03e9d559664c196344c121b",
+    "semantic_hash": "430386a2f03e9d559664c196344c121b"
+  },
+  "frontend/electronic-signature-ui/.vscode/tasks.json": {
+    "mtime": 1789638080.1376631,
+    "ast_hash": "cb7ed9a56930402d9059ea5a9773d60e",
+    "semantic_hash": "cb7ed9a56930402d9059ea5a9773d60e"
+  },
+  "frontend/electronic-signature-ui/angular.json": {
+    "mtime": 1789728773.0851395,
+    "ast_hash": "8dccab2e48d4668ab1f79633f15767c7",
+    "semantic_hash": ""
+  },
+  "frontend/electronic-signature-ui/package.json": {
+    "mtime": 1789638080.1376631,
+    "ast_hash": "7753a46ced8baf66462f99c39be7b7f6",
+    "semantic_hash": "7753a46ced8baf66462f99c39be7b7f6"
+  },
+  "frontend/electronic-signature-ui/src/app/app.config.ts": {
+    "mtime": 1789728509.3357086,
+    "ast_hash": "049a102bc3de012910b57861da9207cf",
+    "semantic_hash": ""
+  },
+  "frontend/electronic-signature-ui/src/app/app.routes.ts": {
+    "mtime": 1789968570.0749297,
+    "ast_hash": "2e97b089c97db73eb078a941443e2111",
+    "semantic_hash": ""
+  },
+  "frontend/electronic-signature-ui/src/app/app.spec.ts": {
+    "mtime": 1789638080.1376631,
+    "ast_hash": "fcb940f7e8ff2f0041d6788b020e077e",
+    "semantic_hash": "fcb940f7e8ff2f0041d6788b020e077e"
+  },
+  "frontend/electronic-signature-ui/src/app/app.ts": {
+    "mtime": 1789728463.6087673,
+    "ast_hash": "91eccafec32f389e4b7918dabb3ad81e",
+    "semantic_hash": ""
+  },
+  "frontend/electronic-signature-ui/src/main.ts": {
+    "mtime": 1789638080.1376631,
+    "ast_hash": "1289536d6d8f94242a4ffc598d094633",
+    "semantic_hash": "1289536d6d8f94242a4ffc598d094633"
+  },
+  "frontend/electronic-signature-ui/tsconfig.app.json": {
+    "mtime": 1789638080.1376631,
+    "ast_hash": "e36d55dc3a81c35d0328a257103d6d3d",
+    "semantic_hash": "e36d55dc3a81c35d0328a257103d6d3d"
+  },
+  "frontend/electronic-signature-ui/tsconfig.json": {
+    "mtime": 1789638080.1376631,
+    "ast_hash": "53bc94dc8fdca030fe291132353484a9",
+    "semantic_hash": "53bc94dc8fdca030fe291132353484a9"
+  },
+  "frontend/electronic-signature-ui/tsconfig.spec.json": {
+    "mtime": 1789638080.1376631,
+    "ast_hash": "9e61a5663cdfef3c963a3595ac1a7813",
+    "semantic_hash": "9e61a5663cdfef3c963a3595ac1a7813"
+  },
+  "backend/ElectronicSignature.API/Controllers/AuthController.cs": {
+    "mtime": 1789728267.2776685,
+    "ast_hash": "058d091b198c461e875125d8c266f183",
+    "semantic_hash": ""
+  },
+  "backend/ElectronicSignature.API/Models/LoginRequest.cs": {
+    "mtime": 1789728212.0258794,
+    "ast_hash": "efb7d553779f5c4060a5dbfc1f3da7eb",
+    "semantic_hash": ""
+  },
+  "backend/ElectronicSignature.API/Services/AuthService.cs": {
+    "mtime": 1789728296.3627796,
+    "ast_hash": "70ba27d06b805bb5ca63f32df4ec5d11",
+    "semantic_hash": ""
+  },
+  "frontend/electronic-signature-ui/src/app/auth/auth.guard.ts": {
+    "mtime": 1789728341.436169,
+    "ast_hash": "8f38f9c431062f30ce49cd75a8953414",
+    "semantic_hash": ""
+  },
+  "frontend/electronic-signature-ui/src/app/auth/auth.service.ts": {
+    "mtime": 1789728717.3655226,
+    "ast_hash": "dae0699e3daa79b0aa64dd2f3e8abf98",
+    "semantic_hash": ""
+  },
+  "frontend/electronic-signature-ui/src/app/dashboard/dashboard.component.ts": {
+    "mtime": 1789728732.1077616,
+    "ast_hash": "4ffed4eba498102183647699cd2b0783",
+    "semantic_hash": ""
+  },
+  "frontend/electronic-signature-ui/src/app/login/login-page.component.ts": {
+    "mtime": 1789729860.450009,
+    "ast_hash": "15dee2ac171f9cfaf54c1bf01801edcf",
+    "semantic_hash": ""
+  },
+  "Assets/Texas_Animal_Showcase_Login_Page.md": {
+    "mtime": 1789725664.471396,
+    "ast_hash": "0077fde667373ec8bf41bfc87cb84340",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1789726026.5186505,
+    "ast_hash": "8a6643a420fdad6bfb583523bc6cef16",
+    "semantic_hash": ""
+  },
+  "backend/ElectronicSignature.API/obj/Debug/net10.0/ElectronicSignature.API.csproj.FileListAbsolute.txt": {
+    "mtime": 1789972588.2995114,
+    "ast_hash": "6e4dab5474d025d71c0443f47a78ddcd",
+    "semantic_hash": ""
+  },
+  "frontend/cdk-drag-drop-practice/README.md": {
+    "mtime": 1789639838.7867057,
+    "ast_hash": "78a9c887c1b720fa8a9ab430ae5bce5c",
+    "semantic_hash": ""
+  },
+  "frontend/cdk-drag-drop-practice/src/app/app.html": {
+    "mtime": 1789641992.4896824,
+    "ast_hash": "2c72ba5add9bbb533522528c7d4eb08a",
+    "semantic_hash": ""
+  },
+  "frontend/cdk-drag-drop-practice/src/app/drop-list-practice/drop-list-practice.html": {
+    "mtime": 1789641732.4523842,
+    "ast_hash": "9bccdfe8839bef7df98fa0de6c7e4deb",
+    "semantic_hash": ""
+  },
+  "frontend/cdk-drag-drop-practice/src/index.html": {
+    "mtime": 1789639838.7997403,
+    "ast_hash": "ad307634775e7d9c0c91bd3add1e1432",
+    "semantic_hash": ""
+  },
+  "frontend/electronic-signature-ui/README.md": {
+    "mtime": 1789638080.1376631,
+    "ast_hash": "602c2eb6875a2cb9d0e3cf00f4262e01",
+    "semantic_hash": ""
+  },
+  "frontend/electronic-signature-ui/src/app/app.html": {
+    "mtime": 1789728519.6744142,
+    "ast_hash": "71460a42a419bbd4b18c0b69e9e7081d",
+    "semantic_hash": ""
+  },
+  "frontend/electronic-signature-ui/src/app/login/login-page.component.html": {
+    "mtime": 1789967119.5558386,
+    "ast_hash": "f235319e88cd261d7b799e623a1cf49d",
+    "semantic_hash": ""
+  },
+  "frontend/electronic-signature-ui/src/index.html": {
+    "mtime": 1789638080.1376631,
+    "ast_hash": "218a869a4b83c586f84141c1eebefafa",
+    "semantic_hash": ""
+  },
+  "Assets/Login page.png": {
+    "mtime": 1789724788.305255,
+    "ast_hash": "d11e1cd36ee74b5913e4a095d8e74878",
+    "semantic_hash": ""
+  },
+  "frontend/electronic-signature-ui/src/assets/images/texas-animal-showcase-login.svg": {
+    "mtime": 1789728441.8080306,
+    "ast_hash": "a77dfeabd9b41c8d559fc8f109e7cefd",
+    "semantic_hash": ""
+  },
+  "backend/ElectronicSignature.API/Controllers/ExhibitorsController.cs": {
+    "mtime": 1789972273.5641518,
+    "ast_hash": "0c7b54d584c02856f3743f4981747431",
+    "semantic_hash": ""
+  },
+  "backend/ElectronicSignature.API/DTO/RegisterExhibitorRequest.cs": {
+    "mtime": 1789970635.7990303,
+    "ast_hash": "7c3854f0e032b47ce65bc1c6ee6752d1",
+    "semantic_hash": ""
+  },
+  "backend/ElectronicSignature.API/Data/ApplicationDbContext.cs": {
+    "mtime": 1789972227.6997032,
+    "ast_hash": "b632a5e6b237df630d0f7e11ef6b7ba4",
+    "semantic_hash": ""
+  },
+  "backend/ElectronicSignature.API/Models/Exhibitor.cs": {
+    "mtime": 1789971249.5846646,
+    "ast_hash": "81a20996bac4a911080fd2b32173fb90",
+    "semantic_hash": ""
+  },
+  "frontend/electronic-signature-ui/src/app/exhibitor-register/exhibitor-register.component.ts": {
+    "mtime": 1789973876.950295,
+    "ast_hash": "808c8a8ddd8ca2a2217b5645c354d9c2",
+    "semantic_hash": ""
+  },
+  "frontend/electronic-signature-ui/src/app/exhibitor-register/exhibitor-register.spec.ts": {
+    "mtime": 1789974164.4426188,
+    "ast_hash": "8f241844dca02ca80b050836f5565151",
+    "semantic_hash": ""
+  },
+  "frontend/electronic-signature-ui/src/app/exhibitor-register/exhibitor-register.component.html": {
+    "mtime": 1789974027.313439,
+    "ast_hash": "5973b56cadcbcbd3f96b877f458852ab",
+    "semantic_hash": ""
+  },
+  "backend/ElectronicSignature.API/Migrations/20260921063647_InitialCreate.Designer.cs": {
+    "mtime": 1789972607.2878869,
+    "ast_hash": "f69f98569029c2ab5f1f66cf6f7a56ef",
+    "semantic_hash": ""
+  },
+  "backend/ElectronicSignature.API/Migrations/20260921063647_InitialCreate.cs": {
+    "mtime": 1789972607.2878869,
+    "ast_hash": "67e5db24d558f50b383decf30b3ea029",
+    "semantic_hash": ""
+  },
+  "backend/ElectronicSignature.API/Migrations/ApplicationDbContextModelSnapshot.cs": {
+    "mtime": 1789972607.2878869,
+    "ast_hash": "377cdb5c6428cc745acde08ec77a333f",
+    "semantic_hash": ""
+  },
+  "backend/ElectronicSignature.API/bin/Debug/net10.0/BuildHost-netcore/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.deps.json": {
+    "mtime": 1763421306.0,
+    "ast_hash": "6a002d69baf7b85bfe11c404487f1905",
+    "semantic_hash": ""
+  },
+  "backend/ElectronicSignature.API/bin/Debug/net10.0/BuildHost-netcore/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.runtimeconfig.json": {
+    "mtime": 1763421306.0,
+    "ast_hash": "4a59cbd5a00293f28ad2649fdda570f9",
+    "semantic_hash": ""
+  },
+  "frontend/electronic-signature-ui/src/app/exhibitor-register/exhibitor.service.ts": {
+    "mtime": 1789973861.9121287,
+    "ast_hash": "6e36e00d87d317abe62728090fc803ed",
+    "semantic_hash": ""
+  }
+}

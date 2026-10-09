@@ -1,0 +1,535 @@
+<app-consent-shell
+  formTitle="Junior Exhibitor Consent Form"
+  badgeLabel="Junior Exhibitor"
+  badgeVariant="junior"
+  [steps]="steps"
+  [currentStep]="currentStep()"
+  [showBack]="currentStep() > 1 && !submitted()"
+  [isLastStep]="isLastStep()"
+  [nextDisabled]="submitting() || submitted() || (isLastStep() && (form.invalid || !participantSignature() || !guardianSignature()))"
+  (back)="goBack()"
+  (next)="goNext()"
+  *ngIf="!submitted()"
+>
+  <form [formGroup]="form">
+    <section class="section-card" *ngIf="currentStep() === 1" formGroupName="event">
+      <h3 class="section-heading"><span class="icon">&#128197;</span> 1. Event Information</h3>
+      <div class="field-grid">
+        <div class="field">
+          <label>Event Name</label>
+          <input type="text" formControlName="eventName" />
+        </div>
+        <div class="field">
+          <label>Event Location <span class="required">*</span></label>
+          <input type="text" formControlName="eventLocation" placeholder="Enter event location" />
+          <span class="error-msg" *ngIf="showError('event', 'eventLocation', 'required')">Event location is required.</span>
+        </div>
+        <div class="field">
+          <label>Event Date <span class="required">*</span></label>
+          <input type="date" formControlName="eventDate" />
+          <span class="error-msg" *ngIf="showError('event', 'eventDate', 'required')">Event date is required.</span>
+        </div>
+        <div class="field">
+          <label>Organization / Event Sponsor</label>
+          <input type="text" formControlName="organization" placeholder="Enter organization or event sponsor" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card" *ngIf="currentStep() === 2" formGroupName="participant">
+      <h3 class="section-heading"><span class="icon">&#128100;</span> 2. Junior Exhibitor Information</h3>
+      <div class="field-grid">
+        <div class="field full-width">
+          <label>Full Legal Name <span class="required">*</span></label>
+          <input type="text" formControlName="fullName" placeholder="Enter the Junior exhibitor's full name" />
+          <span class="error-msg" *ngIf="showError('participant', 'fullName', 'required')">Full name is required.</span>
+        </div>
+        <div class="field">
+          <label>Phone</label>
+          <input type="tel" formControlName="phone" placeholder="Enter 10-digit phone number" />
+          <span class="error-msg" *ngIf="showError('participant', 'phone', 'pattern')">Enter a valid 10-digit phone number.</span>
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="email" formControlName="email" placeholder="Enter email address" />
+          <span class="error-msg" *ngIf="showError('participant', 'email', 'email')">Enter a valid email address.</span>
+        </div>
+        <div class="field full-width">
+          <label>Address <span class="required">*</span></label>
+          <input type="text" formControlName="address" placeholder="Enter address" />
+          <span class="error-msg" *ngIf="showError('participant', 'address', 'required')">Address is required.</span>
+        </div>
+        <div class="field">
+          <label>City <span class="required">*</span></label>
+          <input type="text" formControlName="city" placeholder="Enter city" />
+          <span class="error-msg" *ngIf="showError('participant', 'city', 'required')">City is required.</span>
+        </div>
+        <div class="field">
+          <label>State <span class="required">*</span></label>
+          <input type="text" formControlName="state" />
+          <span class="error-msg" *ngIf="showError('participant', 'state', 'required')">State is required.</span>
+        </div>
+        <div class="field">
+          <label>ZIP Code <span class="required">*</span></label>
+          <input type="text" maxlength="5" formControlName="zip" placeholder="Enter ZIP code" />
+          <span class="error-msg" *ngIf="showError('participant', 'zip', 'required')">ZIP code is required.</span>
+          <span class="error-msg" *ngIf="showError('participant', 'zip', 'pattern')">Enter a valid 5-digit ZIP code.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card" *ngIf="currentStep() === 3" formGroupName="juniorEligibility">
+      <h3 class="section-heading"><span class="icon">&#128197;</span> 3. Junior Eligibility</h3>
+      <div class="field-grid">
+        <div class="field">
+          <label>Date of Birth <span class="required">*</span></label>
+          <input
+            type="date"
+            formControlName="dateOfBirth"
+            [min]="minimumEligibleDateOfBirth()"
+            [max]="maximumEligibleDateOfBirth()"
+          />
+          <span class="error-msg" *ngIf="showError('juniorEligibility', 'dateOfBirth', 'required')">Date of birth is required.</span>
+          <span class="error-msg" *ngIf="showError('juniorEligibility', 'dateOfBirth', 'futureDate')">Date of birth cannot be in the future.</span>
+          <span class="error-msg" *ngIf="!eventDateForEligibility()">Select the Event Date before choosing a date of birth and applying Junior eligibility restrictions.</span>
+          <span class="error-msg" *ngIf="eventDateForEligibility() && !juniorEligibilityRule() && !eligibilityLoadError()">Loading Junior eligibility rules...</span>
+          <span class="error-msg" *ngIf="eligibilityLoadError()" role="alert">{{ eligibilityLoadError() }}</span>
+        </div>
+        <div class="field">
+          <label>Age <span class="required">*</span></label>
+          <input type="number" min="0" step="1" formControlName="age" readonly />
+          <small>Age is calculated automatically from the date of birth and Event Date.</small>
+          <span class="error-msg" *ngIf="showError('juniorEligibility', 'age', 'required')">Age is required.</span>
+          <span class="error-msg" *ngIf="showError('juniorEligibility', 'age', 'min')">Age must be zero or greater.</span>
+          <span class="error-msg" *ngIf="showError('juniorEligibility', 'age', 'pattern')">Age must be a whole number.</span>
+          <span class="error-msg" *ngIf="showEligibilityError('eventDateRequiredForEligibility')">Select the Event Date before applying Junior eligibility restrictions.</span>
+          <span class="error-msg" *ngIf="showEligibilityError('eligibilityRuleUnavailable')">Junior eligibility could not be verified. Please contact the administrator.</span>
+          <span class="error-msg" *ngIf="showEligibilityError('invalidEligibilityDates')">Enter a valid Date of Birth on or before the Event Date.</span>
+          <span class="error-msg" *ngIf="showEligibilityError('ageNotEligible')">Participant must be {{ juniorEligibilityRule()?.minAge }}–{{ juniorEligibilityRule()?.maxAge }} years old on the Event Date.</span>
+          <span class="error-msg" *ngIf="showEligibilityError('calculatedAgeMismatch')">Age must match the participant's Date of Birth on the Event Date.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card" *ngIf="currentStep() === 4" formGroupName="club">
+      <h3 class="section-heading"><span class="icon">&#127963;</span> 4. Club Information</h3>
+      <div class="field-grid">
+        <div class="field">
+          <label>Club Affiliation <span class="required">*</span></label>
+          <input type="text" formControlName="clubAffiliation" placeholder="Enter club affiliation" />
+          <span class="error-msg" *ngIf="showError('club', 'clubAffiliation', 'required')">Club affiliation is required.</span>
+        </div>
+        <div class="field">
+          <label>Club Name <span class="required">*</span></label>
+          <input type="text" formControlName="clubName" placeholder="Enter club name" />
+          <span class="error-msg" *ngIf="showError('club', 'clubName', 'required')">Club name is required.</span>
+        </div>
+        <div class="field">
+          <label>Club / Chapter Number</label>
+          <input type="text" formControlName="clubChapterNumber" placeholder="Optional" />
+        </div>
+        <div class="field">
+          <label>County / District</label>
+          <input type="text" formControlName="countyDistrict" placeholder="Optional" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card" *ngIf="currentStep() === 5" formGroupName="parentGuardian">
+      <h3 class="section-heading"><span class="icon">&#128101;</span> 5. Parent / Legal Guardian Information</h3>
+      <div class="field-grid">
+        <div class="field full-width">
+          <label>Parent / Legal Guardian Full Name <span class="required">*</span></label>
+          <input type="text" formControlName="fullName" placeholder="Enter parent or legal guardian name" />
+          <span class="error-msg" *ngIf="showError('parentGuardian', 'fullName', 'required')">Parent / legal guardian name is required.</span>
+        </div>
+        <div class="field">
+          <label>Relationship to Junior Exhibitor <span class="required">*</span></label>
+          <input type="text" formControlName="relationship" placeholder="Enter relationship" />
+          <span class="error-msg" *ngIf="showError('parentGuardian', 'relationship', 'required')">Relationship is required.</span>
+        </div>
+        <div class="field">
+          <label>Parent / Legal Guardian Phone <span class="required">*</span></label>
+          <input type="tel" maxlength="10" formControlName="phone" placeholder="Enter 10-digit phone number" />
+          <span class="error-msg" *ngIf="showError('parentGuardian', 'phone', 'required')">Phone number is required.</span>
+          <span class="error-msg" *ngIf="showError('parentGuardian', 'phone', 'pattern')">Enter a valid 10-digit phone number.</span>
+        </div>
+        <div class="field full-width">
+          <label>Parent / Legal Guardian Email <span class="required">*</span></label>
+          <input type="email" formControlName="email" placeholder="Enter email address" />
+          <span class="error-msg" *ngIf="showError('parentGuardian', 'email', 'required')">Email is required.</span>
+          <span class="error-msg" *ngIf="showError('parentGuardian', 'email', 'email')">Enter a valid email address.</span>
+        </div>
+        <div class="field full-width">
+          <label>Address</label>
+          <input type="text" formControlName="address" placeholder="Enter address (optional)" />
+        </div>
+        <div class="field">
+          <label>City</label>
+          <input type="text" formControlName="city" placeholder="Enter city (optional)" />
+        </div>
+        <div class="field">
+          <label>State</label>
+          <input type="text" formControlName="state" placeholder="Enter state (optional)" />
+        </div>
+        <div class="field">
+          <label>ZIP Code</label>
+          <input type="text" maxlength="5" formControlName="zip" placeholder="Optional" />
+          <span class="error-msg" *ngIf="showError('parentGuardian', 'zip', 'pattern')">Enter a valid 5-digit ZIP code.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card" *ngIf="currentStep() === 6" formGroupName="animal">
+      <h3 class="section-heading"><span class="icon">&#128062;</span> 6. Animal Information</h3>
+      <div class="field full-width">
+        <label>Animal Type</label>
+        <div class="checkbox-grid" formArrayName="animalTypes">
+          <label class="checkbox-row" *ngFor="let type of animalTypes; let i = index">
+            <input type="checkbox" [formControlName]="i" />
+            {{ type }}
+          </label>
+        </div>
+        <input type="text" formControlName="otherAnimalType" placeholder="Specify other" style="margin-top: 10px" />
+      </div>
+      <div class="field-grid" style="margin-top: 18px">
+        <div class="field">
+          <label>Animal Name / Identification <span class="required">*</span></label>
+          <input type="text" formControlName="animalName" placeholder="Enter animal name or ID" />
+          <span class="error-msg" *ngIf="showError('animal', 'animalName', 'required')">Animal name/ID is required.</span>
+        </div>
+        <div class="field">
+          <label>Animal Type / Species <span class="required">*</span></label>
+          <input type="text" formControlName="species" placeholder="Enter species" />
+          <span class="error-msg" *ngIf="showError('animal', 'species', 'required')">Species is required.</span>
+        </div>
+        <div class="field">
+          <label>Exhibitor Role <span class="required">*</span></label>
+          <div class="role-options">
+            <label class="checkbox-row"><input type="radio" formControlName="exhibitorRole" value="Exhibitor" /> Exhibitor</label>
+            <label class="checkbox-row"><input type="radio" formControlName="exhibitorRole" value="Handler" /> Handler</label>
+            <label class="checkbox-row"><input type="radio" formControlName="exhibitorRole" value="Participant" /> Participant</label>
+          </div>
+        </div>
+        <div class="field">
+          <label>Other Role</label>
+          <input type="text" formControlName="otherRole" placeholder="Enter other role" />
+        </div>
+      </div>
+    </section>
+
+    <ng-container *ngIf="currentStep() === 7">
+      <section class="section-card" formGroupName="safety">
+        <h3 class="section-heading"><span class="icon">&#128737;</span> 7. Safety Agreement</h3>
+        <div class="checkbox-list" formArrayName="guidelines">
+          <label class="checkbox-row" *ngFor="let guideline of safetyGuidelines; let i = index">
+            <input type="checkbox" [formControlName]="i" />
+            {{ guideline }}
+          </label>
+        </div>
+        <label class="checkbox-row" style="margin-top: 16px">
+          <input type="checkbox" formControlName="agree" />
+          I agree to follow the above safety guidelines. <span class="required">*</span>
+        </label>
+        <span class="error-msg" *ngIf="showError('safety', 'agree', 'required')">You must agree to the safety guidelines.</span>
+      </section>
+      <section class="section-card" formGroupName="medical" style="margin-top: 20px">
+        <h3 class="section-heading"><span class="icon">&#10084;</span> Medical / Emergency Information</h3>
+        <div class="field-grid">
+          <div class="field full-width">
+            <label>Allergies or Medical Conditions Staff Should Know About</label>
+            <textarea formControlName="allergies" placeholder="Enter allergies or medical conditions"></textarea>
+          </div>
+          <div class="field full-width">
+            <label>Special Assistance Required</label>
+            <textarea formControlName="specialAssistance" placeholder="Enter special assistance required"></textarea>
+          </div>
+          <div class="field">
+            <label>Emergency Contact Name <span class="required">*</span></label>
+            <input type="text" formControlName="emergencyContactName" placeholder="Enter emergency contact name" />
+            <span class="error-msg" *ngIf="showError('medical', 'emergencyContactName', 'required')">Emergency contact name is required.</span>
+          </div>
+          <div class="field">
+            <label>Emergency Contact Phone <span class="required">*</span></label>
+            <input type="tel" formControlName="emergencyContactPhone" placeholder="Enter 10-digit phone number" />
+            <span class="error-msg" *ngIf="showError('medical', 'emergencyContactPhone', 'required')">Emergency contact phone is required.</span>
+            <span class="error-msg" *ngIf="showError('medical', 'emergencyContactPhone', 'pattern')">Enter a valid 10-digit phone number.</span>
+          </div>
+          <div class="field full-width">
+            <label>Preferred Hospital / Medical Facility</label>
+            <input type="text" formControlName="preferredHospital" placeholder="Enter hospital or medical facility" />
+          </div>
+        </div>
+      </section>
+    </ng-container>
+
+    <section class="section-card" *ngIf="currentStep() === 8" formGroupName="consent">
+      <h3 class="section-heading"><span class="icon">&#128196;</span> 8. Junior / Parent Consent</h3>
+      <p class="consent-text">
+        The parent or legal guardian provides consent for the Junior Exhibitor's participation in the event.
+        The agreements below are specific to this form and are not represented as official legal wording.
+      </p>
+      <div class="checkbox-list">
+        <label class="checkbox-row">
+          <input type="checkbox" formControlName="parentGuardianConsent" />
+          The parent / legal guardian gives permission for the Junior Exhibitor to participate. <span class="required">*</span>
+        </label>
+        <span class="error-msg" *ngIf="showError('consent', 'parentGuardianConsent', 'required')">Parent / guardian consent is required.</span>
+        <label class="checkbox-row">
+          <input type="checkbox" formControlName="juniorParticipationAgreement" />
+          The Junior Exhibitor agrees to participate responsibly and follow event instructions. <span class="required">*</span>
+        </label>
+        <span class="error-msg" *ngIf="showError('consent', 'juniorParticipationAgreement', 'required')">Junior participation agreement is required.</span>
+        <label class="checkbox-row">
+          <input type="checkbox" formControlName="juniorRulesAgreement" />
+          The parent / legal guardian and Junior Exhibitor agree to follow applicable event safety rules. <span class="required">*</span>
+        </label>
+        <span class="error-msg" *ngIf="showError('consent', 'juniorRulesAgreement', 'required')">Safety / rules agreement is required.</span>
+        <label class="checkbox-row">
+          <input type="checkbox" formControlName="agree" />
+          The parent / legal guardian has read and agrees to the consent information above. <span class="required">*</span>
+        </label>
+        <span class="error-msg" *ngIf="showError('consent', 'agree', 'required')">Consent agreement is required.</span>
+      </div>
+    </section>
+
+    <section class="section-card" *ngIf="currentStep() === 9">
+      <h3 class="section-heading"><span class="icon">&#9997;</span> 9. Digital Signatures</h3>
+      <app-digital-signature
+        heading="Participant Digital Signature"
+        description="The Junior Exhibitor should provide their signature to acknowledge participation."
+        (signatureSaved)="onParticipantSignatureSaved($event)"
+        (signatureCleared)="onParticipantSignatureCleared()"
+      ></app-digital-signature>
+      <p class="signature-status" *ngIf="participantSignature()">Participant signature saved.</p>
+      <p class="error-msg" *ngIf="!participantSignature()" style="margin-top: 10px">
+        Please provide and save the participant's signature before continuing.
+      </p>
+      <app-digital-signature
+        heading="Parent / Legal Guardian Digital Signature"
+        description="The parent or legal guardian should provide the signature for this consent."
+        (signatureSaved)="onGuardianSignatureSaved($event)"
+        (signatureCleared)="onGuardianSignatureCleared()"
+      ></app-digital-signature>
+      <p class="signature-status" *ngIf="guardianSignature()">Parent / guardian signature saved.</p>
+      <p class="error-msg" *ngIf="!guardianSignature()" style="margin-top: 10px">
+        Please provide and save the parent / legal guardian's signature before continuing.
+      </p>
+    </section>
+
+    <section class="section-card" *ngIf="currentStep() === 10" formGroupName="review">
+      <h3 class="section-heading"><span class="icon">&#9989;</span> 10. Final Review &amp; Consent</h3>
+      <div class="review-summary">
+        <div class="review-block full-width">
+          <h4>1. Event Information</h4>
+          <dl>
+            <dt>Event Name</dt><dd>{{ form.value.event.eventName || '—' }}</dd>
+            <dt>Event Location</dt><dd>{{ form.value.event.eventLocation || '—' }}</dd>
+            <dt>Event Date</dt><dd>{{ form.value.event.eventDate || '—' }}</dd>
+            <dt>Organization / Event Sponsor</dt><dd>{{ form.value.event.organization || '—' }}</dd>
+          </dl>
+        </div>
+        <div class="review-block full-width">
+          <h4>2. Junior Exhibitor Information</h4>
+          <dl>
+            <dt>Junior Exhibitor Full Name</dt><dd>{{ form.value.participant.fullName || '—' }}</dd>
+            <dt>Date of Birth</dt><dd>{{ form.value.juniorEligibility.dateOfBirth || '—' }}</dd>
+            <dt>Age</dt><dd>{{ form.value.juniorEligibility.age ?? '—' }}</dd>
+            <dt>Phone</dt><dd>{{ form.value.participant.phone || '—' }}</dd>
+            <dt>Email</dt><dd>{{ form.value.participant.email || '—' }}</dd>
+            <dt>Address</dt><dd>{{ form.value.participant.address || '—' }}</dd>
+            <dt>City</dt><dd>{{ form.value.participant.city || '—' }}</dd>
+            <dt>State</dt><dd>{{ form.value.participant.state || '—' }}</dd>
+            <dt>ZIP Code</dt><dd>{{ form.value.participant.zip || '—' }}</dd>
+          </dl>
+        </div>
+        <div class="review-block full-width">
+          <h4>3. Junior Eligibility &amp; Club Information</h4>
+          <dl>
+            <dt>Club Affiliation</dt><dd>{{ form.value.club.clubAffiliation || '—' }}</dd>
+            <dt>Club Name</dt><dd>{{ form.value.club.clubName || '—' }}</dd>
+            <dt>Club / Chapter Number</dt><dd>{{ form.value.club.clubChapterNumber || '—' }}</dd>
+            <dt>County / District</dt><dd>{{ form.value.club.countyDistrict || '—' }}</dd>
+            <dt>Eligibility</dt>
+            <dd>Date of birth and age supplied for configured eligibility validation</dd>
+          </dl>
+        </div>
+        <div class="review-block full-width">
+          <h4>4. Parent / Legal Guardian Information</h4>
+          <dl>
+            <dt>Full Name</dt><dd>{{ form.value.parentGuardian.fullName || '—' }}</dd>
+            <dt>Relationship</dt><dd>{{ form.value.parentGuardian.relationship || '—' }}</dd>
+            <dt>Phone</dt><dd>{{ form.value.parentGuardian.phone || '—' }}</dd>
+            <dt>Email</dt><dd>{{ form.value.parentGuardian.email || '—' }}</dd>
+            <dt>Address</dt><dd>{{ form.value.parentGuardian.address || '—' }}</dd>
+            <dt>City</dt><dd>{{ form.value.parentGuardian.city || '—' }}</dd>
+            <dt>State</dt><dd>{{ form.value.parentGuardian.state || '—' }}</dd>
+            <dt>ZIP Code</dt><dd>{{ form.value.parentGuardian.zip || '—' }}</dd>
+            <dt>Emergency Contact</dt><dd>{{ form.value.medical.emergencyContactName || '—' }}</dd>
+            <dt>Emergency Contact Phone</dt><dd>{{ form.value.medical.emergencyContactPhone || '—' }}</dd>
+          </dl>
+        </div>
+        <div class="review-block full-width">
+          <h4>5. Event Participation Consent</h4>
+          <div class="review-consent-row">
+            <span class="check-state" [class.agreed]="form.value.consent.parentGuardianConsent">
+              <span *ngIf="form.value.consent.parentGuardianConsent">&#9745; Agreed</span>
+              <span *ngIf="!form.value.consent.parentGuardianConsent">&#9744; Not selected</span>
+            </span>
+            <span>The parent / legal guardian gives permission for the Junior Exhibitor to participate.</span>
+          </div>
+        </div>
+        <div class="review-block full-width">
+          <h4>6. Animal Participation Information</h4>
+          <dl>
+            <dt>Animal Type</dt>
+            <dd>{{ getSelectedAnimalTypes(form.value.animal.animalTypes) || 'None selected' }}</dd>
+            <dt>Other Animal Type</dt><dd>{{ form.value.animal.otherAnimalType || '—' }}</dd>
+            <dt>Animal Name / Identification</dt><dd>{{ form.value.animal.animalName || '—' }}</dd>
+            <dt>Animal Type / Species</dt><dd>{{ form.value.animal.species || '—' }}</dd>
+            <dt>Exhibitor Role</dt><dd>{{ form.value.animal.exhibitorRole || '—' }}</dd>
+            <dt>Other Role</dt><dd>{{ form.value.animal.otherRole || '—' }}</dd>
+          </dl>
+        </div>
+        <div class="review-block full-width">
+          <h4>7. Safety and Responsible Animal Handling</h4>
+          <ul class="review-checklist">
+            <li *ngFor="let guideline of safetyGuidelines; let i = index">
+              <span class="check-state" [class.agreed]="form.value.safety.guidelines[i]">
+                <span *ngIf="form.value.safety.guidelines[i]">&#9745; Agreed</span>
+                <span *ngIf="!form.value.safety.guidelines[i]">&#9744; Not selected</span>
+              </span>
+              <span>{{ guideline }}</span>
+            </li>
+            <li>
+              <span class="check-state" [class.agreed]="form.value.safety.agree">
+                <span *ngIf="form.value.safety.agree">&#9745; Agreed</span>
+                <span *ngIf="!form.value.safety.agree">&#9744; Not selected</span>
+              </span>
+              <span>I agree to follow the above safety guidelines.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="review-block full-width">
+          <h4>8. Medical / Emergency Information</h4>
+          <dl>
+            <dt>Allergies / Medical Conditions</dt><dd>{{ form.value.medical.allergies || 'None provided' }}</dd>
+            <dt>Special Assistance</dt><dd>{{ form.value.medical.specialAssistance || 'None provided' }}</dd>
+            <dt>Emergency Contact</dt><dd>{{ form.value.medical.emergencyContactName || '—' }}</dd>
+            <dt>Emergency Contact Phone</dt><dd>{{ form.value.medical.emergencyContactPhone || '—' }}</dd>
+            <dt>Preferred Hospital / Medical Facility</dt><dd>{{ form.value.medical.preferredHospital || 'None provided' }}</dd>
+          </dl>
+        </div>
+        <div class="review-block full-width">
+          <h4>9. Parent / Guardian Consent</h4>
+          <ul class="review-checklist">
+            <li>
+              <span class="check-state" [class.agreed]="form.value.consent.parentGuardianConsent">
+                <span *ngIf="form.value.consent.parentGuardianConsent">&#9745; Agreed</span>
+                <span *ngIf="!form.value.consent.parentGuardianConsent">&#9744; Not selected</span>
+              </span>
+              <span>Parent / guardian participation permission</span>
+            </li>
+            <li>
+              <span class="check-state" [class.agreed]="form.value.consent.juniorParticipationAgreement">
+                <span *ngIf="form.value.consent.juniorParticipationAgreement">&#9745; Agreed</span>
+                <span *ngIf="!form.value.consent.juniorParticipationAgreement">&#9744; Not selected</span>
+              </span>
+              <span>Junior responsible participation agreement</span>
+            </li>
+            <li>
+              <span class="check-state" [class.agreed]="form.value.consent.juniorRulesAgreement">
+                <span *ngIf="form.value.consent.juniorRulesAgreement">&#9745; Agreed</span>
+                <span *ngIf="!form.value.consent.juniorRulesAgreement">&#9744; Not selected</span>
+              </span>
+              <span>Parent / guardian and Junior safety-rules agreement</span>
+            </li>
+            <li>
+              <span class="check-state" [class.agreed]="form.value.consent.agree">
+                <span *ngIf="form.value.consent.agree">&#9745; Agreed</span>
+                <span *ngIf="!form.value.consent.agree">&#9744; Not selected</span>
+              </span>
+              <span>Parent / guardian consent information agreement</span>
+            </li>
+          </ul>
+        </div>
+        <div class="review-block full-width">
+          <h4>10. Participant Digital Signature</h4>
+          <dl>
+            <dt>Signer</dt><dd>{{ form.value.participant.fullName || '—' }}</dd>
+            <dt>Signature Method</dt><dd>{{ participantSignature()?.method || 'Not provided' }}</dd>
+          </dl>
+          <div class="signature-preview" *ngIf="participantSignature() as savedSignature">
+            <img
+              *ngIf="isImageSignature(savedSignature)"
+              [src]="savedSignature.dataUrl"
+              alt="Participant signature preview"
+            />
+            <div class="typed-signature" *ngIf="savedSignature.method === 'type'">
+              {{ savedSignature.fullName }}
+            </div>
+          </div>
+        </div>
+        <div class="review-block full-width">
+          <h4>Parent / Legal Guardian Digital Signature</h4>
+          <dl>
+            <dt>Signer</dt><dd>{{ form.value.parentGuardian.fullName || '—' }}</dd>
+            <dt>Signature Method</dt><dd>{{ guardianSignature()?.method || 'Not provided' }}</dd>
+          </dl>
+          <div class="signature-preview" *ngIf="guardianSignature() as savedSignature">
+            <img
+              *ngIf="isImageSignature(savedSignature)"
+              [src]="savedSignature.dataUrl"
+              alt="Parent or legal guardian signature preview"
+            />
+            <div class="typed-signature" *ngIf="savedSignature.method === 'type'">
+              {{ savedSignature.fullName }}
+            </div>
+          </div>
+        </div>
+        <div class="review-block full-width">
+          <h4>11. Participant Acknowledgment</h4>
+          <div class="review-consent-row">
+            <span class="check-state" [class.agreed]="form.value.review.participantAcknowledgment">
+              <span *ngIf="form.value.review.participantAcknowledgment">&#9745; Agreed</span>
+              <span *ngIf="!form.value.review.participantAcknowledgment">&#9744; Not selected</span>
+            </span>
+            <span>I confirm the information provided for the Junior Exhibitor is accurate and complete.</span>
+          </div>
+        </div>
+        <div class="review-block full-width">
+          <h4>12. Final Consent</h4>
+          <div class="review-consent-row">
+            <span class="check-state" [class.agreed]="form.value.review.finalConsent">
+              <span *ngIf="form.value.review.finalConsent">&#9745; Agreed</span>
+              <span *ngIf="!form.value.review.finalConsent">&#9744; Not selected</span>
+            </span>
+            <span>I give final consent to submit this Junior Exhibitor Consent Form.</span>
+          </div>
+        </div>
+      </div>
+      <div class="consent-box">
+        <label class="checkbox-row">
+          <input type="checkbox" formControlName="participantAcknowledgment" />
+          I confirm the information provided for the Junior Exhibitor is accurate and complete. <span class="required">*</span>
+        </label>
+        <span class="error-msg" *ngIf="showError('review', 'participantAcknowledgment', 'required')">Acknowledgment is required.</span>
+        <label class="checkbox-row" style="margin-top: 14px">
+          <input type="checkbox" formControlName="finalConsent" />
+          I give final consent to submit this Junior Exhibitor Consent Form. <span class="required">*</span>
+        </label>
+        <span class="error-msg" *ngIf="showError('review', 'finalConsent', 'required')">Final consent is required.</span>
+      </div>
+      <p class="error-msg" *ngIf="submissionError()" role="alert">{{ submissionError() }}</p>
+    </section>
+  </form>
+</app-consent-shell>
+
+<div class="section-card success-panel" *ngIf="submitted()">
+  <div class="icon">&#10003;</div>
+  <h2>Junior Consent Form Submitted</h2>
+  <p>Your Junior Exhibitor Consent Form has been submitted successfully.</p>
+  <button type="button" class="btn-primary" (click)="goToDashboard()">
+    Return to Dashboard
+  </button>
+</div>

@@ -1,0 +1,597 @@
+:host {
+  display: block;
+  width: 100%;
+  color: #172033;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   MAIN FORM
+========================================================= */
+
+.consent-form {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 8px 0 40px;
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.form-card {
+  background: #ffffff;
+  border: 1px solid #e2e7ee;
+  border-radius: 14px;
+  padding: 26px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(20, 38, 61, 0.03);
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.section-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 25px;
+}
+
+.section-number {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #edf4fb;
+  color: #1f5f99;
+
+  border-radius: 9px;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: #17283f;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.section-heading p {
+  margin: 5px 0 0;
+  color: #7a8595;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   FORM FIELD
+========================================================= */
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-field label {
+  color: #3e4b5d;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.form-field label span {
+  color: #d85b47;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+
+  padding: 11px 13px;
+
+  border: 1px solid #d9e0e8;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #263449;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: #4280b9;
+  box-shadow: 0 0 0 3px rgba(66, 128, 185, 0.08);
+}
+
+.form-field input[readonly] {
+  background: #f6f8fa;
+  color: #6f7a8a;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.error {
+  color: #d55243;
+  font-size: 11px;
+  line-height: 1.4;
+  margin-top: 1px;
+}
+
+
+/* =========================================================
+   CONSENT BOX
+========================================================= */
+
+.consent-box {
+  margin-top: 22px;
+
+  padding: 16px;
+
+  border: 1px solid #dfe6ee;
+  border-radius: 9px;
+
+  background: #f7f9fc;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  color: #4d596a;
+  font-size: 13px;
+  line-height: 1.55;
+
+  cursor: pointer;
+}
+
+.checkbox-row input {
+  width: 16px;
+  height: 16px;
+
+  margin-top: 2px;
+
+  accent-color: #1f5f99;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   ANIMAL OPTIONS
+========================================================= */
+
+.animal-options {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+
+  margin-top: 8px;
+}
+
+.animal-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  min-height: 44px;
+
+  padding: 10px 12px;
+
+  border: 1px solid #dce2e9;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #4c5869;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.animal-option:hover {
+  border-color: #8eacc6;
+  background: #f7fafd;
+}
+
+.animal-option input {
+  accent-color: #1f5f99;
+}
+
+
+/* =========================================================
+   SAFETY REQUIREMENTS
+========================================================= */
+
+.requirements {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.requirement {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+
+  padding: 13px 14px;
+
+  border: 1px solid #e4e8ee;
+  border-radius: 9px;
+
+  background: #fafbfd;
+
+  color: #505c6d;
+
+  font-size: 13px;
+  line-height: 1.5;
+
+  cursor: pointer;
+}
+
+.requirement input {
+  width: 16px;
+  height: 16px;
+
+  margin-top: 2px;
+
+  accent-color: #1f5f99;
+
+  flex-shrink: 0;
+}
+
+.safety-agreement {
+  margin-top: 10px;
+  padding: 14px;
+
+  border: 1px solid #d5e3ef;
+  background: #f2f7fb;
+}
+
+
+/* =========================================================
+   CONSENT TEXT
+========================================================= */
+
+.consent-text {
+  padding: 18px;
+
+  border: 1px solid #e3e8ef;
+  border-radius: 9px;
+
+  background: #f8fafc;
+
+  margin-bottom: 20px;
+}
+
+.consent-text p {
+  margin: 0 0 13px;
+
+  color: #596477;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.consent-text p:last-child {
+  margin-bottom: 0;
+}
+
+.consent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+
+/* =========================================================
+   EMERGENCY AUTHORIZATION
+========================================================= */
+
+.authorization-box {
+  margin-top: 22px;
+
+  padding: 17px;
+
+  border: 1px solid #ecdcc9;
+  border-radius: 9px;
+
+  background: #fff9f3;
+}
+
+.authorization-box h4 {
+  margin: 0 0 7px;
+
+  color: #815329;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.authorization-box p {
+  margin: 0;
+
+  color: #756352;
+
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   DIGITAL SIGNATURE
+========================================================= */
+
+.signature-card {
+  overflow: hidden;
+}
+
+.signature-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 18px;
+
+  padding: 14px 16px;
+
+  border: 1px solid #d5e7dc;
+  border-radius: 9px;
+
+  background: #f2faf5;
+}
+
+.status-icon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #2f8a57;
+  color: #ffffff;
+
+  font-weight: 700;
+}
+
+.signature-status strong {
+  display: block;
+
+  color: #276c47;
+  font-size: 13px;
+}
+
+.signature-status p {
+  margin: 3px 0 0;
+
+  color: #688174;
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   ACKNOWLEDGMENT
+========================================================= */
+
+.acknowledgment-box {
+  margin-bottom: 20px;
+
+  padding: 17px;
+
+  border: 1px solid #e1e6ed;
+  border-radius: 9px;
+
+  background: #f8fafc;
+}
+
+.acknowledgment-box p {
+  margin: 0;
+
+  color: #596477;
+
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   FINAL AGREEMENT
+========================================================= */
+
+.final-agreement {
+  margin-top: 18px;
+
+  padding: 16px;
+
+  border: 1px solid #d5e2ee;
+  border-radius: 9px;
+
+  background: #f1f7fc;
+
+  font-weight: 600;
+  color: #28445f;
+}
+
+
+/* =========================================================
+   SUBMITTED
+========================================================= */
+
+.submitted-card {
+  padding: 40px 25px;
+
+  margin-bottom: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce7e0;
+  border-radius: 14px;
+
+  text-align: center;
+}
+
+.success-icon {
+  width: 55px;
+  height: 55px;
+
+  margin: 0 auto 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #2f8a57;
+  color: #ffffff;
+
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.submitted-card h2 {
+  margin: 0;
+
+  color: #21364c;
+
+  font-size: 20px;
+}
+
+.submitted-card p {
+  margin: 8px 0 22px;
+
+  color: #788394;
+
+  font-size: 13px;
+}
+
+.primary-btn {
+  border: none;
+
+  padding: 11px 20px;
+
+  border-radius: 8px;
+
+  background: #1f5f99;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: #174b79;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .consent-form {
+    max-width: 100%;
+  }
+
+  .animal-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .form-card {
+    padding: 19px;
+    border-radius: 11px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: auto;
+  }
+
+  .animal-options {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    gap: 10px;
+  }
+
+  .section-number {
+    width: 35px;
+    min-width: 35px;
+    height: 35px;
+  }
+
+  .section-heading h2 {
+    font-size: 16px;
+  }
+
+}

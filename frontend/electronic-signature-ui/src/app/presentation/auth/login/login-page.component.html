@@ -1,0 +1,305 @@
+<div class="auth-shell">
+
+  <div class="login-panel">
+
+    <!-- ================= LEFT BRANDING ================= -->
+    <div class="hero-panel">
+
+      <!-- Texas Animal Showcase Logo -->
+      <div class="brand-block">
+
+        <div class="brand-logo">
+          <div class="logo-star">★</div>
+
+          <div class="brand-text">
+            <h1>TEXAS</h1>
+            <h2>ANIMAL SHOWCASE</h2>
+            <p>YOUTH • ANIMALS • OPPORTUNITY</p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- Main Heading -->
+      <div class="hero-caption">
+
+        <h2>
+          Building<br />
+          Tomorrow's<br />
+          Leaders Today
+        </h2>
+
+        <div class="heading-line"></div>
+
+        <p>
+          A platform for exhibitors to complete
+          consent forms and be a part of the
+          Texas Animal Showcase.
+        </p>
+
+      </div>
+
+
+      <!-- Feature Logos -->
+      <div class="impact-row">
+
+        <div class="impact-item">
+
+          <div class="impact-icon people-icon">
+            👥
+          </div>
+
+          <span>
+            SAFE<br />
+            EVENTS
+          </span>
+
+        </div>
+
+
+        <div class="impact-item">
+
+          <div class="impact-icon shield-icon">
+            🛡
+          </div>
+
+          <span>
+            RESPONSIBLE<br />
+            EXHIBITION
+          </span>
+
+        </div>
+
+
+        <div class="impact-item">
+
+          <div class="impact-icon award-icon">
+            🏅
+          </div>
+
+          <span>
+            BRIGHTER<br />
+            FUTURES
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ================= RIGHT LOGIN ================= -->
+    <div class="form-panel">
+
+      <!-- Register -->
+      <div class="top-link-row">
+
+        <span>New here?</span>
+
+        <button
+          type="button"
+          class="register-button"
+          routerLink="/register">
+          Register
+        </button>
+
+      </div>
+
+
+      <!-- Login Form -->
+      <div class="form-wrapper">
+
+        <h3>Welcome Back</h3>
+
+        <p class="intro-copy">
+          Log in to your exhibitor account to access
+          your consent forms.
+        </p>
+
+
+        <form
+          [formGroup]="loginForm"
+          (ngSubmit)="submit()"
+          novalidate>
+
+
+          <!-- EMAIL -->
+          <div class="field-group">
+
+            <label for="email">
+              Email Address
+            </label>
+
+            <div
+              class="input-shell"
+              [class.invalid]="
+                loginForm.controls.email.invalid &&
+                loginForm.controls.email.touched
+              ">
+
+              <span class="input-icon">
+                ✉
+              </span>
+
+              <input
+                id="email"
+                type="email"
+                formControlName="email"
+                placeholder="Enter your email address"
+                autocomplete="email"
+              />
+
+            </div>
+
+
+            <small
+              class="error-text"
+              *ngIf="
+                loginForm.controls.email.touched &&
+                loginForm.controls.email.hasError('required')
+              ">
+              Email is required.
+            </small>
+
+
+            <small
+              class="error-text"
+              *ngIf="
+                loginForm.controls.email.touched &&
+                loginForm.controls.email.hasError('email')
+              ">
+              Please enter a valid email address.
+            </small>
+
+          </div>
+
+
+          <!-- PASSWORD -->
+          <div class="field-group">
+
+            <label for="password">
+              Password
+            </label>
+
+            <div
+              class="input-shell"
+              [class.invalid]="
+                loginForm.controls.password.invalid &&
+                loginForm.controls.password.touched
+              ">
+
+              <span class="input-icon">
+                🔒
+              </span>
+
+              <input
+                id="password"
+                [type]="
+                  passwordVisible()
+                    ? 'text'
+                    : 'password'
+                "
+                formControlName="password"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+              />
+
+
+              <button
+                type="button"
+                class="visibility-button"
+                [attr.aria-label]="
+                  passwordVisible()
+                    ? 'Hide password'
+                    : 'Show password'
+                "
+                (click)="togglePasswordVisibility()">
+
+                👁
+
+              </button>
+
+            </div>
+
+
+            <small
+              class="error-text"
+              *ngIf="
+                loginForm.controls.password.touched &&
+                loginForm.controls.password.hasError('required')
+              ">
+              Password is required.
+            </small>
+
+          </div>
+
+
+          <!-- FORGOT PASSWORD -->
+          <div class="utility-row">
+
+            <a href="#">
+              Forgot Password?
+            </a>
+
+          </div>
+
+
+          <!-- LOGIN ERROR -->
+          <div
+            class="error-banner"
+            *ngIf="loginError()">
+
+            {{ loginError() }}
+
+          </div>
+
+
+          <!-- LOGIN BUTTON -->
+          <button
+            type="submit"
+            class="primary-button"
+            [disabled]="isSubmitting()">
+
+            {{ isSubmitting() ? 'Logging in...' : 'Login' }}
+
+          </button>
+
+
+          <!-- OR -->
+          <div class="divider-row">
+
+            <span></span>
+
+            <p>OR</p>
+
+            <span></span>
+
+          </div>
+
+
+          <!-- GOOGLE -->
+          <button
+            type="button"
+            class="google-button">
+
+            <span class="google-mark">
+              G
+            </span>
+
+            <span>
+              Continue with Google
+            </span>
+
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,654 @@
+/* =========================================================
+   OPEN EXHIBITOR CONSENT FORM
+   Responsive / Full Width UI
+   ========================================================= */
+
+:host {
+  display: block;
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------
+   Main form card
+   --------------------------------------------------------- */
+
+.section-card {
+  width: 100%;
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border: 1px solid #e1e7ee;
+  border-radius: 14px;
+
+  padding: 28px 30px;
+  margin-bottom: 22px;
+
+  box-shadow: 0 3px 12px rgba(15, 45, 75, 0.06);
+}
+
+/* ---------------------------------------------------------
+   Section heading
+   --------------------------------------------------------- */
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin: 0 0 24px;
+
+  color: #0b2d52;
+
+  font-size: 19px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.section-heading .icon {
+  width: 28px;
+  height: 28px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #1174c5;
+  font-size: 18px;
+}
+
+/* ---------------------------------------------------------
+   Form grid
+   --------------------------------------------------------- */
+
+.field-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 22px 18px;
+
+  align-items: start;
+}
+
+.field {
+  min-width: 0;
+}
+
+.field.full-width {
+  grid-column: 1 / -1;
+}
+
+/* ---------------------------------------------------------
+   Labels
+   --------------------------------------------------------- */
+
+.field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #183b60;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+.required {
+  color: #d93636;
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------
+   Inputs / Select
+   --------------------------------------------------------- */
+
+.field input,
+.field select {
+  width: 100%;
+  height: 52px;
+
+  box-sizing: border-box;
+
+  padding: 0 14px;
+
+  background: #ffffff;
+
+  border: 1px solid #b9c9da;
+  border-radius: 8px;
+
+  color: #17395d;
+
+  font-family: inherit;
+  font-size: 15px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.field input::placeholder {
+  color: #8a9caf;
+}
+
+.field input:hover,
+.field select:hover {
+  border-color: #8da8c2;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: #1175c9;
+
+  box-shadow:
+    0 0 0 3px rgba(17, 117, 201, 0.12);
+}
+
+/* ---------------------------------------------------------
+   Textarea
+   --------------------------------------------------------- */
+
+.field textarea {
+  width: 100%;
+  min-height: 100px;
+
+  box-sizing: border-box;
+
+  padding: 13px 14px;
+
+  resize: vertical;
+
+  background: #ffffff;
+
+  border: 1px solid #b9c9da;
+  border-radius: 8px;
+
+  color: #17395d;
+
+  font-family: inherit;
+  font-size: 15px;
+
+  line-height: 1.5;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.field textarea::placeholder {
+  color: #8a9caf;
+}
+
+.field textarea:focus {
+  border-color: #1175c9;
+
+  box-shadow:
+    0 0 0 3px rgba(17, 117, 201, 0.12);
+}
+
+/* ---------------------------------------------------------
+   Error messages
+   --------------------------------------------------------- */
+
+.error-msg {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #d93434;
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* ---------------------------------------------------------
+   Checkboxes
+   --------------------------------------------------------- */
+
+.checkbox-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(6, minmax(0, 1fr));
+
+  gap: 14px 20px;
+
+  padding: 16px 18px;
+
+  background: #f5f8fb;
+
+  border-radius: 10px;
+
+  border: 1px solid #e1e8ef;
+}
+
+.checkbox-row {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 9px;
+
+  color: #234566;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  cursor: pointer;
+}
+
+.checkbox-row input[type="checkbox"],
+.checkbox-row input[type="radio"] {
+  width: 17px;
+  height: 17px;
+
+  margin: 2px 0 0;
+
+  flex-shrink: 0;
+
+  accent-color: #1175c9;
+
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------------
+   Role options
+   --------------------------------------------------------- */
+
+.role-options {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 14px 20px;
+
+  min-height: 52px;
+
+  align-items: center;
+
+  padding: 0 4px;
+}
+
+/* ---------------------------------------------------------
+   Safety checklist
+   --------------------------------------------------------- */
+
+.checkbox-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+
+  padding: 18px 20px;
+
+  background: #f5f8fb;
+
+  border: 1px solid #e1e8ef;
+
+  border-radius: 10px;
+}
+
+/* ---------------------------------------------------------
+   Consent text
+   --------------------------------------------------------- */
+
+.consent-text {
+  padding: 17px 18px;
+
+  margin: 0 0 20px;
+
+  background: #f5f8fb;
+
+  border-radius: 10px;
+
+  color: #405875;
+
+  font-size: 14px;
+
+  line-height: 1.65;
+
+  border: 1px solid #e5ebf1;
+}
+
+/* ---------------------------------------------------------
+   Review summary
+   --------------------------------------------------------- */
+
+.review-summary {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 22px;
+
+  width: 100%;
+}
+
+.review-block {
+  padding: 20px;
+
+  background: #f7f9fb;
+
+  border: 1px solid #e2e8ef;
+
+  border-radius: 10px;
+}
+
+.review-block.full-width {
+  grid-column: 1 / -1;
+}
+
+.review-block h4 {
+  margin: 0 0 16px;
+
+  color: #12375b;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.review-block dl {
+  display: grid;
+
+  grid-template-columns:
+    140px minmax(0, 1fr);
+
+  gap: 11px 15px;
+
+  margin: 0;
+}
+
+.review-block dt {
+  color: #72859a;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+.review-block dd {
+  margin: 0;
+
+  color: #193c60;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  overflow-wrap: anywhere;
+}
+
+.review-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.review-checklist li,
+.review-consent-row {
+  display: grid;
+  grid-template-columns: 125px minmax(0, 1fr);
+  gap: 14px;
+  color: #405875;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.check-state {
+  color: #8a6170;
+  font-weight: 700;
+}
+
+.check-state.agreed {
+  color: #167a4d;
+}
+
+.signature-preview {
+  min-height: 95px;
+  margin-top: 18px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px dashed #b9c9da;
+  border-radius: 10px;
+}
+
+.signature-preview img {
+  display: block;
+  max-width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+}
+
+.typed-signature {
+  color: #17395d;
+  font-family: 'Segoe Script', 'Brush Script MT', cursive;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+/* ---------------------------------------------------------
+   Success screen
+   --------------------------------------------------------- */
+
+.success-panel {
+  text-align: center;
+
+  padding: 55px 30px;
+}
+
+.success-panel .icon {
+  width: 70px;
+  height: 70px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e7f7ef;
+
+  color: #18a66a;
+
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.success-panel h2 {
+  margin: 0 0 10px;
+
+  color: #0b2d52;
+
+  font-size: 28px;
+}
+
+.success-panel p {
+  margin: 0 0 24px;
+
+  color: #60758c;
+
+  font-size: 16px;
+}
+
+/* ---------------------------------------------------------
+   Large desktop
+   --------------------------------------------------------- */
+
+@media (min-width: 1400px) {
+
+  .section-card {
+    padding: 32px 34px;
+  }
+
+  .section-heading {
+    font-size: 20px;
+  }
+
+  .field-grid {
+    gap: 24px 22px;
+  }
+
+  .field label {
+    font-size: 15px;
+  }
+
+  .field input,
+  .field select {
+    height: 54px;
+    font-size: 15px;
+  }
+
+  .field textarea {
+    min-height: 110px;
+  }
+
+  .checkbox-row {
+    font-size: 15px;
+  }
+}
+
+/* ---------------------------------------------------------
+   Laptop / Medium Desktop
+   --------------------------------------------------------- */
+
+@media (max-width: 1200px) {
+
+  .field-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .checkbox-grid {
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* ---------------------------------------------------------
+   Tablet
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+  .section-card {
+    padding: 24px;
+  }
+
+  .field-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .checkbox-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .review-summary {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+  .section-card {
+    padding: 18px;
+
+    border-radius: 11px;
+  }
+
+  .section-heading {
+    font-size: 17px;
+
+    margin-bottom: 20px;
+  }
+
+  .field-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .field.full-width {
+    grid-column: auto;
+  }
+
+  .field input,
+  .field select {
+    height: 50px;
+
+    font-size: 14px;
+  }
+
+  .field textarea {
+    min-height: 90px;
+
+    font-size: 14px;
+  }
+
+  .checkbox-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+  }
+
+  .checkbox-row {
+    font-size: 13px;
+  }
+
+  .role-options {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .review-block dl {
+    grid-template-columns: 1fr;
+
+    gap: 4px;
+  }
+
+  .review-checklist li,
+  .review-consent-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .review-block dd {
+    margin-bottom: 10px;
+  }
+
+  .consent-text {
+    font-size: 13px;
+  }
+}

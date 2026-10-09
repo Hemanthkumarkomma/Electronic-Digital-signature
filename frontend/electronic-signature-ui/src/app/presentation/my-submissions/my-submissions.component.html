@@ -1,0 +1,254 @@
+<div class="submissions-page">
+
+  <div class="page-header">
+
+    <div>
+      <span class="page-label">
+        CONSENT PORTAL
+      </span>
+
+      <h1>
+        My Submissions
+      </h1>
+
+      <p>
+        View your submitted consent forms.
+      </p>
+    </div>
+
+    <a
+      routerLink="{{ newSubmissionLink }}"
+      class="new-submission-btn"
+    >
+      + New Submission
+    </a>
+
+  </div>
+
+
+  <!-- LOADING -->
+
+  <div
+    class="loading-card"
+    *ngIf="loading"
+  >
+
+    <div class="spinner"></div>
+
+    <h3>
+      Loading submissions...
+    </h3>
+
+  </div>
+
+
+  <!-- ERROR -->
+
+  <div
+    class="error-card"
+    *ngIf="!loading && errorMessage"
+  >
+
+    <h3>
+      Unable to load submissions
+    </h3>
+
+    <p>
+      {{ errorMessage }}
+    </p>
+
+    <button
+      type="button"
+      (click)="loadSubmissions()"
+    >
+      Retry
+    </button>
+
+  </div>
+
+
+  <!-- NO DATA -->
+
+  <div
+    class="empty-card"
+    *ngIf="
+      !loading &&
+      !errorMessage &&
+      submissions.length === 0
+    "
+  >
+
+    <h2>
+      No submissions found.
+    </h2>
+
+    <p>
+      There are no submissions for this account.
+    </p>
+
+  </div>
+
+
+  <!-- DATA -->
+
+  <div
+    class="submissions-list"
+    *ngIf="
+      !loading &&
+      !errorMessage &&
+      submissions.length > 0
+    "
+  >
+
+    <div class="count">
+      {{ submissions.length }} Submission(s)
+    </div>
+
+
+    <div
+      class="submission-card"
+      *ngFor="let submission of submissions"
+    >
+
+      <div class="card-header">
+
+        <div>
+
+          <h2>
+            {{ submission.eventName }}
+          </h2>
+
+          <span>
+            {{ (submission.exhibitorType || 'Open') | uppercase }}
+            EXHIBITOR
+          </span>
+
+        </div>
+
+        <strong>
+          {{ submission.status || 'Submitted' }}
+        </strong>
+
+      </div>
+
+
+      <div class="details">
+
+        <div>
+          <label>Submission ID</label>
+          <p>#{{ submission.id }}</p>
+        </div>
+
+        <div>
+          <label>Exhibitor</label>
+          <p>
+            {{ submission.participantFullName }}
+          </p>
+        </div>
+
+        <div>
+          <label>Event</label>
+          <p>
+            {{ submission.eventName }}
+          </p>
+        </div>
+
+        <div>
+          <label>Event Date</label>
+          <p>
+            {{ submission.eventDate ? (submission.eventDate | date: 'dd MMM yyyy') : '—' }}
+          </p>
+        </div>
+
+        <div>
+          <label>Submitted</label>
+          <p>
+            {{ submission.submittedAt ? (submission.submittedAt | date: 'dd MMM yyyy') : '—' }}
+          </p>
+        </div>
+
+        <div>
+          <label>Status</label>
+          <p>
+            {{ submission.status || 'Submitted' }}
+          </p>
+        </div>
+
+        <div>
+          <label>Animal</label>
+          <p>
+            {{ submission.animalName }}
+          </p>
+        </div>
+
+        <div>
+          <label>Species</label>
+          <p>
+            {{ submission.species }}
+          </p>
+        </div>
+
+        <div>
+          <label>Location</label>
+          <p>
+            {{ submission.eventLocation }}
+          </p>
+        </div>
+
+        <div>
+          <label>Email</label>
+          <p>
+            {{ submission.participantEmail }}
+          </p>
+        </div>
+
+        <ng-container *ngIf="submission.exhibitorType === 'Junior'">
+
+          <div *ngIf="submission.age != null">
+            <label>Age</label>
+            <p>{{ submission.age }}</p>
+          </div>
+
+          <div *ngIf="submission.clubName">
+            <label>Club</label>
+            <p>{{ submission.clubName }}</p>
+          </div>
+
+          <div *ngIf="submission.parentGuardianName">
+            <label>Parent / Guardian</label>
+            <p>{{ submission.parentGuardianName }}</p>
+          </div>
+
+        </ng-container>
+
+      </div>
+
+      <div class="card-actions">
+
+        <span
+          class="action-error"
+          *ngIf="actionError?.id === submission.id"
+        >
+          {{ actionError?.message }}
+        </span>
+
+        <button
+          type="button"
+          class="approve-btn"
+          [disabled]="approvingId !== null"
+          (click)="approve(submission)"
+        >
+          {{
+            approvingId === submission.id
+              ? 'Generating PDF...'
+              : isApproved(submission) ? 'Download PDF' : 'Approve'
+          }}
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

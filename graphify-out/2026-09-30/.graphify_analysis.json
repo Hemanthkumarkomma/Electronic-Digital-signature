@@ -1,0 +1,372 @@
+{
+  "communities": {
+    "0": [
+      "frontend_cdk_drag_drop_practice_package",
+      "frontend_cdk_drag_drop_practice_package_devdependencies",
+      "frontend_cdk_drag_drop_practice_package_devdependencies_angular_build",
+      "frontend_cdk_drag_drop_practice_package_devdependencies_angular_cli",
+      "frontend_cdk_drag_drop_practice_package_devdependencies_angular_compiler_cli",
+      "frontend_cdk_drag_drop_practice_package_devdependencies_jsdom",
+      "frontend_cdk_drag_drop_practice_package_devdependencies_prettier",
+      "frontend_cdk_drag_drop_practice_package_devdependencies_typescript",
+      "frontend_cdk_drag_drop_practice_package_devdependencies_vitest",
+      "frontend_cdk_drag_drop_practice_package_json_angular_build",
+      "frontend_cdk_drag_drop_practice_package_json_angular_cli",
+      "frontend_cdk_drag_drop_practice_package_json_angular_compiler_cli",
+      "frontend_cdk_drag_drop_practice_package_json_jsdom",
+      "frontend_cdk_drag_drop_practice_package_json_prettier",
+      "frontend_cdk_drag_drop_practice_package_json_typescript",
+      "frontend_cdk_drag_drop_practice_package_json_vitest",
+      "frontend_cdk_drag_drop_practice_package_name",
+      "frontend_cdk_drag_drop_practice_package_packagemanager",
+      "frontend_cdk_drag_drop_practice_package_private",
+      "frontend_cdk_drag_drop_practice_package_scripts",
+      "frontend_cdk_drag_drop_practice_package_scripts_build",
+      "frontend_cdk_drag_drop_practice_package_scripts_ng",
+      "frontend_cdk_drag_drop_practice_package_scripts_start",
+      "frontend_cdk_drag_drop_practice_package_scripts_test",
+      "frontend_cdk_drag_drop_practice_package_scripts_watch",
+      "frontend_cdk_drag_drop_practice_package_version"
+    ],
+    "1": [
+      "frontend_electronic_signature_ui_angular_architect_build",
+      "frontend_electronic_signature_ui_angular_architect_serve",
+      "frontend_electronic_signature_ui_angular_architect_test",
+      "frontend_electronic_signature_ui_angular_build_builder",
+      "frontend_electronic_signature_ui_angular_build_configurations",
+      "frontend_electronic_signature_ui_angular_build_defaultconfiguration",
+      "frontend_electronic_signature_ui_angular_configurations_development",
+      "frontend_electronic_signature_ui_angular_configurations_production",
+      "frontend_electronic_signature_ui_angular_development_buildtarget",
+      "frontend_electronic_signature_ui_angular_development_extractlicenses",
+      "frontend_electronic_signature_ui_angular_development_optimization",
+      "frontend_electronic_signature_ui_angular_development_sourcemap",
+      "frontend_electronic_signature_ui_angular_electronic_signature_ui_architect",
+      "frontend_electronic_signature_ui_angular_electronic_signature_ui_prefix",
+      "frontend_electronic_signature_ui_angular_electronic_signature_ui_projecttype",
+      "frontend_electronic_signature_ui_angular_electronic_signature_ui_root",
+      "frontend_electronic_signature_ui_angular_electronic_signature_ui_schematics",
+      "frontend_electronic_signature_ui_angular_electronic_signature_ui_sourceroot",
+      "frontend_electronic_signature_ui_angular_production_budgets",
+      "frontend_electronic_signature_ui_angular_production_buildtarget",
+      "frontend_electronic_signature_ui_angular_production_outputhashing",
+      "frontend_electronic_signature_ui_angular_projects_electronic_signature_ui",
+      "frontend_electronic_signature_ui_angular_serve_builder",
+      "frontend_electronic_signature_ui_angular_serve_configurations",
+      "frontend_electronic_signature_ui_angular_serve_defaultconfiguration",
+      "frontend_electronic_signature_ui_angular_test_builder"
+    ],
+    "2": [
+      "frontend_cdk_drag_drop_practice_angular_architect_build",
+      "frontend_cdk_drag_drop_practice_angular_architect_serve",
+      "frontend_cdk_drag_drop_practice_angular_architect_test",
+      "frontend_cdk_drag_drop_practice_angular_build_builder",
+      "frontend_cdk_drag_drop_practice_angular_build_configurations",
+      "frontend_cdk_drag_drop_practice_angular_build_defaultconfiguration",
+      "frontend_cdk_drag_drop_practice_angular_cdk_drag_drop_practice_architect",
+      "frontend_cdk_drag_drop_practice_angular_configurations_development",
+      "frontend_cdk_drag_drop_practice_angular_configurations_production",
+      "frontend_cdk_drag_drop_practice_angular_development_buildtarget",
+      "frontend_cdk_drag_drop_practice_angular_development_extractlicenses",
+      "frontend_cdk_drag_drop_practice_angular_development_optimization",
+      "frontend_cdk_drag_drop_practice_angular_development_sourcemap",
+      "frontend_cdk_drag_drop_practice_angular_production_budgets",
+      "frontend_cdk_drag_drop_practice_angular_production_buildtarget",
+      "frontend_cdk_drag_drop_practice_angular_production_outputhashing",
+      "frontend_cdk_drag_drop_practice_angular_serve_builder",
+      "frontend_cdk_drag_drop_practice_angular_serve_configurations",
+      "frontend_cdk_drag_drop_practice_angular_serve_defaultconfiguration",
+      "frontend_cdk_drag_drop_practice_angular_test_builder"
+    ],
+    "3": [
+      "angular_cdk",
+      "frontend_cdk_drag_drop_practice_package_dependencies",
+      "frontend_cdk_drag_drop_practice_package_dependencies_angular_cdk",
+      "frontend_cdk_drag_drop_practice_package_dependencies_angular_common",
+      "frontend_cdk_drag_drop_practice_package_dependencies_angular_compiler",
+      "frontend_cdk_drag_drop_practice_package_dependencies_angular_core",
+      "frontend_cdk_drag_drop_practice_package_dependencies_angular_forms",
+      "frontend_cdk_drag_drop_practice_package_dependencies_angular_platform_browser",
+      "frontend_cdk_drag_drop_practice_package_dependencies_angular_router",
+      "frontend_cdk_drag_drop_practice_package_dependencies_rxjs",
+      "frontend_cdk_drag_drop_practice_package_dependencies_tslib",
+      "frontend_cdk_drag_drop_practice_package_json_angular_common",
+      "frontend_cdk_drag_drop_practice_package_json_angular_compiler",
+      "frontend_cdk_drag_drop_practice_package_json_angular_core",
+      "frontend_cdk_drag_drop_practice_package_json_angular_forms",
+      "frontend_cdk_drag_drop_practice_package_json_angular_platform_browser",
+      "frontend_cdk_drag_drop_practice_package_json_angular_router",
+      "frontend_cdk_drag_drop_practice_package_json_rxjs",
+      "frontend_cdk_drag_drop_practice_package_json_tslib"
+    ],
+    "4": [
+      "frontend_electronic_signature_ui_package_dependencies",
+      "frontend_electronic_signature_ui_package_dependencies_angular_common",
+      "frontend_electronic_signature_ui_package_dependencies_angular_compiler",
+      "frontend_electronic_signature_ui_package_dependencies_angular_core",
+      "frontend_electronic_signature_ui_package_dependencies_angular_forms",
+      "frontend_electronic_signature_ui_package_dependencies_angular_platform_browser",
+      "frontend_electronic_signature_ui_package_dependencies_angular_router",
+      "frontend_electronic_signature_ui_package_dependencies_rxjs",
+      "frontend_electronic_signature_ui_package_dependencies_tslib",
+      "frontend_electronic_signature_ui_package_json_angular_common",
+      "frontend_electronic_signature_ui_package_json_angular_compiler",
+      "frontend_electronic_signature_ui_package_json_angular_core",
+      "frontend_electronic_signature_ui_package_json_angular_forms",
+      "frontend_electronic_signature_ui_package_json_angular_platform_browser",
+      "frontend_electronic_signature_ui_package_json_angular_router",
+      "frontend_electronic_signature_ui_package_json_rxjs",
+      "frontend_electronic_signature_ui_package_json_tslib"
+    ],
+    "5": [
+      "backend_electronicsignature_api_properties_launchsettings",
+      "backend_electronicsignature_api_properties_launchsettings_environmentvariables_aspnetcore_environment",
+      "backend_electronicsignature_api_properties_launchsettings_http_applicationurl",
+      "backend_electronicsignature_api_properties_launchsettings_http_commandname",
+      "backend_electronicsignature_api_properties_launchsettings_http_dotnetrunmessages",
+      "backend_electronicsignature_api_properties_launchsettings_http_environmentvariables",
+      "backend_electronicsignature_api_properties_launchsettings_http_launchbrowser",
+      "backend_electronicsignature_api_properties_launchsettings_https_applicationurl",
+      "backend_electronicsignature_api_properties_launchsettings_https_commandname",
+      "backend_electronicsignature_api_properties_launchsettings_https_dotnetrunmessages",
+      "backend_electronicsignature_api_properties_launchsettings_https_environmentvariables",
+      "backend_electronicsignature_api_properties_launchsettings_https_launchbrowser",
+      "backend_electronicsignature_api_properties_launchsettings_profiles",
+      "backend_electronicsignature_api_properties_launchsettings_profiles_http",
+      "backend_electronicsignature_api_properties_launchsettings_profiles_https",
+      "backend_electronicsignature_api_properties_launchsettings_schema"
+    ],
+    "6": [
+      "frontend_electronic_signature_ui_package_devdependencies",
+      "frontend_electronic_signature_ui_package_devdependencies_angular_build",
+      "frontend_electronic_signature_ui_package_devdependencies_angular_cli",
+      "frontend_electronic_signature_ui_package_devdependencies_angular_compiler_cli",
+      "frontend_electronic_signature_ui_package_devdependencies_jsdom",
+      "frontend_electronic_signature_ui_package_devdependencies_prettier",
+      "frontend_electronic_signature_ui_package_devdependencies_typescript",
+      "frontend_electronic_signature_ui_package_devdependencies_vitest",
+      "frontend_electronic_signature_ui_package_json_angular_build",
+      "frontend_electronic_signature_ui_package_json_angular_cli",
+      "frontend_electronic_signature_ui_package_json_angular_compiler_cli",
+      "frontend_electronic_signature_ui_package_json_jsdom",
+      "frontend_electronic_signature_ui_package_json_prettier",
+      "frontend_electronic_signature_ui_package_json_typescript",
+      "frontend_electronic_signature_ui_package_json_vitest"
+    ],
+    "7": [
+      "frontend_cdk_drag_drop_practice_angular",
+      "frontend_cdk_drag_drop_practice_angular_cdk_drag_drop_practice_prefix",
+      "frontend_cdk_drag_drop_practice_angular_cdk_drag_drop_practice_projecttype",
+      "frontend_cdk_drag_drop_practice_angular_cdk_drag_drop_practice_root",
+      "frontend_cdk_drag_drop_practice_angular_cdk_drag_drop_practice_schematics",
+      "frontend_cdk_drag_drop_practice_angular_cdk_drag_drop_practice_sourceroot",
+      "frontend_cdk_drag_drop_practice_angular_cli",
+      "frontend_cdk_drag_drop_practice_angular_cli_analytics",
+      "frontend_cdk_drag_drop_practice_angular_cli_packagemanager",
+      "frontend_cdk_drag_drop_practice_angular_newprojectroot",
+      "frontend_cdk_drag_drop_practice_angular_projects",
+      "frontend_cdk_drag_drop_practice_angular_projects_cdk_drag_drop_practice",
+      "frontend_cdk_drag_drop_practice_angular_schema",
+      "frontend_cdk_drag_drop_practice_angular_version"
+    ],
+    "8": [
+      "frontend_cdk_drag_drop_practice_src_app_app",
+      "frontend_cdk_drag_drop_practice_src_app_app_app",
+      "frontend_cdk_drag_drop_practice_src_app_app_config",
+      "frontend_cdk_drag_drop_practice_src_app_app_config_appconfig",
+      "frontend_cdk_drag_drop_practice_src_app_app_routes",
+      "frontend_cdk_drag_drop_practice_src_app_app_routes_routes",
+      "frontend_cdk_drag_drop_practice_src_app_app_spec",
+      "frontend_cdk_drag_drop_practice_src_app_app_ts_component",
+      "frontend_cdk_drag_drop_practice_src_app_drop_list_practice_drop_list_practice",
+      "frontend_cdk_drag_drop_practice_src_app_drop_list_practice_drop_list_practice_droplistpractice",
+      "frontend_cdk_drag_drop_practice_src_app_drop_list_practice_drop_list_practice_spec",
+      "frontend_cdk_drag_drop_practice_src_app_drop_list_practice_drop_list_practice_ts_component",
+      "frontend_cdk_drag_drop_practice_src_main"
+    ],
+    "9": [
+      "frontend_electronic_signature_ui_package",
+      "frontend_electronic_signature_ui_package_name",
+      "frontend_electronic_signature_ui_package_packagemanager",
+      "frontend_electronic_signature_ui_package_private",
+      "frontend_electronic_signature_ui_package_scripts",
+      "frontend_electronic_signature_ui_package_scripts_build",
+      "frontend_electronic_signature_ui_package_scripts_ng",
+      "frontend_electronic_signature_ui_package_scripts_start",
+      "frontend_electronic_signature_ui_package_scripts_test",
+      "frontend_electronic_signature_ui_package_scripts_watch",
+      "frontend_electronic_signature_ui_package_version"
+    ],
+    "10": [
+      "frontend_electronic_signature_ui_src_app_app",
+      "frontend_electronic_signature_ui_src_app_app_app",
+      "frontend_electronic_signature_ui_src_app_app_config",
+      "frontend_electronic_signature_ui_src_app_app_config_appconfig",
+      "frontend_electronic_signature_ui_src_app_app_routes",
+      "frontend_electronic_signature_ui_src_app_app_routes_routes",
+      "frontend_electronic_signature_ui_src_app_app_spec",
+      "frontend_electronic_signature_ui_src_app_app_ts_component",
+      "frontend_electronic_signature_ui_src_main"
+    ],
+    "11": [
+      "frontend_electronic_signature_ui_angular",
+      "frontend_electronic_signature_ui_angular_cli",
+      "frontend_electronic_signature_ui_angular_cli_analytics",
+      "frontend_electronic_signature_ui_angular_cli_packagemanager",
+      "frontend_electronic_signature_ui_angular_newprojectroot",
+      "frontend_electronic_signature_ui_angular_projects",
+      "frontend_electronic_signature_ui_angular_schema",
+      "frontend_electronic_signature_ui_angular_version"
+    ],
+    "12": [
+      "frontend_cdk_drag_drop_practice_angular_build_options",
+      "frontend_cdk_drag_drop_practice_angular_json_ref_src_styles_css",
+      "frontend_cdk_drag_drop_practice_angular_options_assets",
+      "frontend_cdk_drag_drop_practice_angular_options_browser",
+      "frontend_cdk_drag_drop_practice_angular_options_styles",
+      "frontend_cdk_drag_drop_practice_angular_options_tsconfig"
+    ],
+    "13": [
+      "frontend_electronic_signature_ui_angular_build_options",
+      "frontend_electronic_signature_ui_angular_json_ref_src_styles_css",
+      "frontend_electronic_signature_ui_angular_options_assets",
+      "frontend_electronic_signature_ui_angular_options_browser",
+      "frontend_electronic_signature_ui_angular_options_styles",
+      "frontend_electronic_signature_ui_angular_options_tsconfig"
+    ],
+    "14": [
+      "backend_electronicsignature_api_electronicsignature_api",
+      "framework_net10_0",
+      "nuget_microsoft_aspnetcore_openapi",
+      "nuget_swashbuckle_aspnetcore",
+      "sdk_microsoft_net_sdk_web"
+    ],
+    "15": [
+      "backend_electronicsignature_api_obj_debug_net10_0_electronicsignature_api_assemblyinfo"
+    ],
+    "16": [
+      "backend_electronicsignature_api_obj_debug_net10_0_electronicsignature_api_globalusings_g"
+    ],
+    "17": [
+      "backend_electronicsignature_api_obj_debug_net10_0_electronicsignature_api_mvcapplicationpartsassemblyinfo"
+    ],
+    "18": [
+      "backend_electronicsignature_api_obj_debug_net10_0_netcoreapp_version_v10_0_assemblyattributes"
+    ],
+    "19": [
+      "backend_electronicsignature_api_program"
+    ]
+  },
+  "cohesion": {
+    "0": 0.07692307692307693,
+    "1": 0.08307692307692308,
+    "2": 0.11052631578947368,
+    "3": 0.10526315789473684,
+    "4": 0.11764705882352941,
+    "5": 0.13333333333333333,
+    "6": 0.13333333333333333,
+    "7": 0.14285714285714285,
+    "8": 0.23076923076923078,
+    "9": 0.18181818181818182,
+    "10": 0.3333333333333333,
+    "11": 0.25,
+    "12": 0.3333333333333333,
+    "13": 0.3333333333333333,
+    "14": 0.4,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0,
+    "18": 1.0,
+    "19": 1.0
+  },
+  "gods": [
+    {
+      "id": "frontend_cdk_drag_drop_practice_angular_projects_cdk_drag_drop_practice",
+      "label": "cdk-drag-drop-practice",
+      "degree": 7
+    },
+    {
+      "id": "frontend_electronic_signature_ui_angular_projects_electronic_signature_ui",
+      "label": "electronic-signature-ui",
+      "degree": 7
+    },
+    {
+      "id": "backend_electronicsignature_api_properties_launchsettings_profiles_http",
+      "label": "http",
+      "degree": 6
+    },
+    {
+      "id": "backend_electronicsignature_api_properties_launchsettings_profiles_https",
+      "label": "https",
+      "degree": 6
+    },
+    {
+      "id": "frontend_cdk_drag_drop_practice_angular_configurations_development",
+      "label": "development",
+      "degree": 6
+    },
+    {
+      "id": "frontend_cdk_drag_drop_practice_package_scripts",
+      "label": "scripts",
+      "degree": 6
+    },
+    {
+      "id": "frontend_electronic_signature_ui_angular_configurations_development",
+      "label": "development",
+      "degree": 6
+    },
+    {
+      "id": "frontend_electronic_signature_ui_package_scripts",
+      "label": "scripts",
+      "degree": 6
+    },
+    {
+      "id": "frontend_cdk_drag_drop_practice_angular_architect_build",
+      "label": "build",
+      "degree": 5
+    },
+    {
+      "id": "frontend_cdk_drag_drop_practice_angular_build_options",
+      "label": "options",
+      "degree": 5
+    }
+  ],
+  "surprises": [],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `dependencies` connect `Community 3` to `Community 0`?",
+      "why": "High betweenness centrality (0.027) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `dependencies` connect `Community 4` to `Community 9`?",
+      "why": "High betweenness centrality (0.023) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `net10.0`, `Microsoft.AspNetCore.OpenApi (10.0.9)`, `Swashbuckle.AspNetCore (10.2.3)` to the rest of the system?",
+      "why": "114 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 0` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 1` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.08307692307692308 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 2` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.11052631578947368 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 3` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected."
+    }
+  ]
+}

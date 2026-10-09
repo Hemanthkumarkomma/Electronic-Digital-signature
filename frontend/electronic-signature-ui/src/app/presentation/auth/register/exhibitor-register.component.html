@@ -1,0 +1,458 @@
+<div class="register-page">
+
+  <div class="register-container">
+
+    <!-- LEFT BRANDING -->
+
+    <div class="branding-panel">
+
+      <div class="brand-logo">
+
+        <div class="logo-star">
+          ★
+        </div>
+
+        <div class="brand-text">
+          <h1>TEXAS</h1>
+          <h2>ANIMAL SHOWCASE</h2>
+          <p>YOUTH • ANIMALS • OPPORTUNITY</p>
+        </div>
+
+      </div>
+
+
+      <div class="branding-content">
+
+        <h2>
+          Join the<br>
+          Texas Animal<br>
+          Showcase
+        </h2>
+
+        <div class="heading-line"></div>
+
+        <p>
+          Create your exhibitor account to complete
+          consent forms and participate in the
+          Texas Animal Showcase.
+        </p>
+
+      </div>
+
+
+      <div class="feature-row">
+
+        <div class="feature-item">
+          <div class="feature-icon">👥</div>
+          <span>SAFE<br>EVENTS</span>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">🛡</div>
+          <span>RESPONSIBLE<br>EXHIBITION</span>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">🏅</div>
+          <span>BRIGHTER<br>FUTURES</span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- RIGHT REGISTRATION FORM -->
+
+    <div class="form-panel">
+
+      <div class="top-link">
+
+        <span>Already have an account?</span>
+
+        <button
+          type="button"
+          class="login-link"
+          routerLink="/login">
+
+          Login
+
+        </button>
+
+      </div>
+
+
+      <div class="form-wrapper">
+
+        <h2>Create Account</h2>
+
+        <p class="form-description">
+          Register as an exhibitor to get started.
+        </p>
+
+
+        <form
+          [formGroup]="registerForm"
+          (ngSubmit)="register()"
+          novalidate>
+
+
+          <!-- FIRST NAME / LAST NAME -->
+
+          <div class="two-column">
+
+            <div class="field-group">
+
+              <label for="firstName">
+                First Name
+              </label>
+
+              <div class="input-wrapper">
+
+                <input
+                  id="firstName"
+                  type="text"
+                  formControlName="firstName"
+                  placeholder="Enter first name"
+                />
+
+              </div>
+
+              <div
+                class="error-text validation-error"
+                *ngIf="showControlError('firstName', 'required')">
+                First name is required.
+              </div>
+
+              <div
+                class="error-text validation-error"
+                *ngIf="showControlError('firstName', 'minlength')">
+                First name must be at least 10 characters.
+              </div>
+
+            </div>
+
+
+            <div class="field-group">
+
+              <label for="lastName">
+                Last Name
+              </label>
+
+              <div class="input-wrapper">
+
+                <input
+                  id="lastName"
+                  type="text"
+                  formControlName="lastName"
+                  placeholder="Enter last name"
+                />
+
+              </div>
+
+              <div
+                class="error-text validation-error"
+                *ngIf="showControlError('lastName', 'required')">
+                Last name is required.
+              </div>
+
+              <div
+                class="error-text validation-error"
+                *ngIf="showControlError('lastName', 'minlength')">
+                Last name must be at least 10 characters.
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- EMAIL -->
+
+          <div class="field-group">
+
+            <label for="email">
+              Email Address
+            </label>
+
+            <div class="input-wrapper">
+
+              <span class="input-icon">
+                ✉
+              </span>
+
+              <input
+                id="email"
+                type="email"
+                formControlName="email"
+                placeholder="Enter your email address"
+              />
+
+            </div>
+
+            <div
+              class="error-text validation-error"
+              *ngIf="showControlError('email', 'required')">
+              Email address is required.
+            </div>
+
+            <div
+              class="error-text validation-error"
+              *ngIf="showControlError('email', 'email')">
+              Please enter a valid email address.
+            </div>
+
+          </div>
+
+
+          <!-- PHONE -->
+
+          <div class="field-group">
+
+            <label for="phone">
+              Phone Number
+            </label>
+
+            <div class="input-wrapper">
+
+              <span class="input-icon">
+                ☎
+              </span>
+
+              <input
+                id="phone"
+                type="tel"
+                formControlName="phone"
+                placeholder="Enter phone number"
+              />
+
+            </div>
+
+            <div
+              class="error-text validation-error"
+              *ngIf="showControlError('phone', 'required')">
+              Phone number is required.
+            </div>
+
+            <div
+              class="error-text validation-error"
+              *ngIf="showControlError('phone', 'pattern')">
+              Please enter a valid 10-digit phone number.
+            </div>
+
+          </div>
+
+
+          <!-- EXHIBITOR TYPE -->
+
+          <div class="field-group">
+
+            <label for="exhibitorType">
+              Exhibitor Type
+            </label>
+
+            <select
+              id="exhibitorType"
+              formControlName="exhibitorType">
+
+              <option value="">
+                Select exhibitor type
+              </option>
+
+              <option value="Junior">
+                Junior
+              </option>
+
+              <option value="Open">
+                Open
+              </option>
+
+            </select>
+
+            <div
+              class="error-text validation-error"
+              *ngIf="showControlError('exhibitorType', 'required')">
+              Please select an exhibitor type.
+            </div>
+
+            <div
+              class="error-text validation-error"
+              *ngIf="showControlError('exhibitorType', 'invalidExhibitorType')">
+              Please select Junior or Open.
+            </div>
+
+          </div>
+
+
+          <!-- PASSWORD -->
+
+          <div class="two-column">
+
+            <div class="field-group">
+
+              <label for="password">
+                Password
+              </label>
+
+              <div class="input-wrapper">
+
+                <input
+                  id="password"
+                  [type]="
+                    passwordVisible()
+                      ? 'text'
+                      : 'password'
+                  "
+                  formControlName="password"
+                  placeholder="Create password"
+                />
+
+                <button
+                  type="button"
+                  class="visibility-button"
+                  (click)="togglePasswordVisibility()">
+
+                  👁
+
+                </button>
+
+              </div>
+
+              <div
+                class="error-text validation-error"
+                *ngIf="showControlError('password', 'required')">
+                Password is required.
+              </div>
+
+              <div
+                class="error-text validation-error"
+                *ngIf="showControlError('password', 'minlength')">
+                Password must be at least 8 characters.
+              </div>
+
+            </div>
+
+
+            <!-- CONFIRM PASSWORD -->
+
+            <div class="field-group">
+
+              <label for="confirmPassword">
+                Confirm Password
+              </label>
+
+              <div class="input-wrapper">
+
+                <input
+                  id="confirmPassword"
+                  [type]="
+                    confirmPasswordVisible()
+                      ? 'text'
+                      : 'password'
+                  "
+                  formControlName="confirmPassword"
+                  placeholder="Confirm password"
+                />
+
+                <button
+                  type="button"
+                  class="visibility-button"
+                  (click)="toggleConfirmPasswordVisibility()">
+
+                  👁
+
+                </button>
+
+              </div>
+
+              <div
+                class="error-text validation-error"
+                *ngIf="showControlError('confirmPassword', 'required')">
+                Please confirm your password.
+              </div>
+
+              <div
+                class="error-text validation-error"
+                *ngIf="showPasswordMismatch()">
+                Passwords do not match.
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- TERMS -->
+
+          <div class="terms-row">
+
+            <input
+              id="terms"
+              type="checkbox"
+              formControlName="terms"
+            />
+
+            <label for="terms">
+
+              I agree to the
+              <a href="#">Terms and Conditions</a>
+              and
+              <a href="#">Privacy Policy</a>.
+
+            </label>
+
+          </div>
+
+          <div
+            class="error-text validation-error terms-validation"
+            *ngIf="showControlError('terms', 'required')">
+            Please accept the Terms and Conditions and Privacy Policy.
+          </div>
+
+
+          <!-- ERROR -->
+
+          <div
+            class="error-banner"
+            *ngIf="registerError()">
+
+            {{ registerError() }}
+
+          </div>
+
+
+          <!-- SUBMIT -->
+
+          <button
+            type="submit"
+            class="register-submit"
+            [disabled]="isSubmitting()">
+
+            {{
+              isSubmitting()
+                ? 'Creating Account...'
+                : 'Create Account'
+            }}
+
+          </button>
+
+
+          <p class="bottom-login">
+
+            Already have an account?
+
+            <a routerLink="/login">
+              Login
+            </a>
+
+          </p>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

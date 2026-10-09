@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1400" role="img" aria-label="Texas Animal Showcase login illustration">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4b372"/>
+      <stop offset="40%" stop-color="#7a4d2f"/>
+      <stop offset="100%" stop-color="#2a2c2f"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f9e6aa"/>
+      <stop offset="100%" stop-color="#d5964a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1400" fill="url(#bg)"/>
+  <rect width="1200" height="1400" fill="rgba(10,12,14,0.18)"/>
+  <circle cx="760" cy="220" r="220" fill="url(#sun)" opacity="0.9"/>
+  <g opacity="0.95">
+    <path d="M450 140L520 260L600 140H670L590 300L720 460H650L560 330L470 460H400L528 300L450 140Z" fill="#dfe6f0"/>
+    <path d="M708 160L860 228L835 260L730 218L708 160Z" fill="#fff"/>
+    <path d="M1060 150L1180 230L1048 260L970 167Z" fill="#dfe6f0"/>
+  </g>
+  <g opacity="0.85">
+    <rect x="50" y="146" width="260" height="110" fill="#e6ad58" opacity="0.15"/>
+    <rect x="80" y="164" width="200" height="78" fill="#f0d89c" opacity="0.2"/>
+    <path d="M470 760C560 630 640 560 760 560C870 560 960 650 1042 770L1080 1400H420L470 760Z" fill="#7b4c31" opacity="0.7"/>
+  </g>
+  <g>
+    <path d="M480 1040C535 895 620 822 740 820C858 818 960 900 1000 1038L970 1280H525L480 1040Z" fill="#6a3a26"/>
+    <path d="M645 960C680 930 710 885 703 850C693 810 670 794 636 788C605 782 565 789 542 817C510 855 515 933 545 971C565 994 612 1001 645 960Z" fill="#4c2b22"/>
+    <path d="M772 860C810 840 862 840 896 858C954 885 987 940 980 1005C972 1082 913 1148 852 1187C803 1218 740 1228 690 1207C644 1188 607 1143 592 1093C566 1017 604 899 772 860Z" fill="#5d3427"/>
+    <path d="M766 896C833 911 905 968 920 1040C934 1106 906 1172 844 1195C797 1214 742 1201 703 1168C671 1140 657 1101 656 1055C655 994 700 930 766 896Z" fill="#573424" opacity="0.9"/>
+    <path d="M647 930C630 897 640 864 669 842C698 821 733 814 761 826C788 837 810 865 809 899C809 927 790 951 764 961C731 975 666 961 647 930Z" fill="#fff" opacity="0.2"/>
+  </g>
+  <g opacity="0.9">
+    <path d="M385 878C425 865 456 859 499 866C443 903 431 975 460 1032C427 1028 398 1018 370 1001C325 975 318 916 385 878Z" fill="#73472b"/>
+    <path d="M1012 876C1048 900 1096 953 1108 1004C1117 1048 1107 1085 1077 1120C1034 1082 987 1035 954 978C931 936 967 894 1012 876Z" fill="#6a3b2a"/>
+  </g>
+  <g>
+    <path d="M83 1290C247 1155 330 1138 430 1165L440 1295H83V1290Z" fill="#3b3d40" opacity="0.45"/>
+    <path d="M760 1295H1200V1400H760V1295Z" fill="#232529" opacity="0.42"/>
+  </g>
+</svg>

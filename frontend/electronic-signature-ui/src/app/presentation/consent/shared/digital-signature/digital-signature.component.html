@@ -1,0 +1,415 @@
+<section class="signature-card">
+
+  <!-- HEADER -->
+  <header class="signature-header">
+    <span class="icon">&#9998;</span>
+    <div>
+      <h3>{{ heading }}</h3>
+
+      <p>
+        {{ description }}
+      </p>
+    </div>
+  </header>
+
+
+  <!-- INFORMATION -->
+  <div class="info-banner">
+    <span class="icon">&#8505;</span>
+
+    <p>
+      Choose one method to provide your signature. Your signature will be
+      securely stored and used only for event consent purposes.
+    </p>
+  </div>
+
+
+  <!-- SIGNATURE METHOD -->
+  <h4 class="section-label">
+    Select Signature Method
+  </h4>
+
+
+  <div class="method-selector">
+
+    <!-- DRAW -->
+    <button
+      type="button"
+      class="method-option"
+      [class.selected]="selectedMethod() === 'draw'"
+      (click)="selectMethod('draw')"
+    >
+
+      <span
+        class="radio"
+        [class.checked]="selectedMethod() === 'draw'"
+      ></span>
+
+      <span class="method-icon">&#9998;</span>
+
+      <span class="method-text">
+        <strong>Draw Signature</strong>
+
+        <small>
+          Use your mouse or touch to draw
+        </small>
+      </span>
+
+    </button>
+
+
+    <!-- TYPE -->
+    <button
+      type="button"
+      class="method-option"
+      [class.selected]="selectedMethod() === 'type'"
+      (click)="selectMethod('type')"
+    >
+
+      <span
+        class="radio"
+        [class.checked]="selectedMethod() === 'type'"
+      ></span>
+
+      <span class="method-icon">&#8996;</span>
+
+      <span class="method-text">
+        <strong>Type Signature</strong>
+
+        <small>
+          Enter your full name to create a digital signature
+        </small>
+      </span>
+
+    </button>
+
+
+    <!-- UPLOAD -->
+    <button
+      type="button"
+      class="method-option"
+      [class.selected]="selectedMethod() === 'upload'"
+      (click)="selectMethod('upload')"
+    >
+
+      <span
+        class="radio"
+        [class.checked]="selectedMethod() === 'upload'"
+      ></span>
+
+      <span class="method-icon">&#8593;</span>
+
+      <span class="method-text">
+        <strong>Upload Signature</strong>
+
+        <small>
+          Upload an image file (PNG, JPG, JPEG)
+        </small>
+      </span>
+
+    </button>
+
+  </div>
+
+
+  <!-- =====================================================
+       DRAW SIGNATURE
+       ===================================================== -->
+
+  <div
+    class="method-panel"
+    *ngIf="selectedMethod() === 'draw'"
+  >
+
+    <div class="panel-heading">
+          
+      <span class="icon-circle">
+        &#9998;
+      </span>
+
+      <div class="panel-heading-content">
+      
+        <strong>
+          Draw Your Signature
+        </strong>
+
+        <p>
+          Use your mouse, touch, or stylus to draw your signature
+          in the box below.
+        </p>
+
+      </div>
+
+      <span
+        class="selected-badge"
+        *ngIf="isSaved()"
+      >
+        &#10003; Selected
+      </span>
+
+    </div>
+
+
+    <!-- SIGNATURE CANVAS -->
+
+    <div class="canvas-wrapper">
+
+      <canvas
+        #signatureCanvas
+        class="signature-canvas"
+
+        width="760"
+        height="220"
+
+        (mousedown)="startDrawing($event)"
+        (mousemove)="draw($event)"
+        (mouseup)="stopDrawing($event)"
+        (mouseleave)="stopDrawing($event)"
+
+        (touchstart)="startDrawing($event)"
+        (touchmove)="draw($event)"
+        (touchend)="stopDrawing($event)"
+        (touchcancel)="stopDrawing($event)"
+      ></canvas>
+
+    </div>
+
+
+    <!-- CANVAS ACTIONS -->
+
+    <div class="panel-actions">
+
+      <button
+        type="button"
+        class="btn-outline"
+        (click)="clearDrawing()"
+      >
+        &#8635; Clear
+      </button>
+
+
+      <button
+        type="button"
+        class="btn-primary"
+        [disabled]="!hasDrawing()"
+        (click)="saveDrawnSignature()"
+      >
+        &#10003; Save Signature
+      </button>
+
+    </div>
+
+
+    <p
+      class="validation-msg"
+      *ngIf="!hasDrawing()"
+    >
+      Please draw your signature before saving.
+    </p>
+
+  </div>
+
+
+  <!-- =====================================================
+       TYPE SIGNATURE
+       ===================================================== -->
+
+  <div
+    class="method-panel"
+    *ngIf="selectedMethod() === 'type'"
+  >
+
+    <div class="panel-heading">
+
+      <span class="icon-circle">
+        &#8996;
+      </span>
+
+      <div class="panel-heading-content">
+
+        <strong>
+          Type Your Signature
+        </strong>
+
+        <p>
+          Enter your full legal name to generate a digital signature.
+        </p>
+
+      </div>
+
+      <span
+        class="selected-badge"
+        *ngIf="isSaved()"
+      >
+        &#10003; Selected
+      </span>
+
+    </div>
+
+
+    <!-- NAME -->
+
+    <label class="field-label">
+      Full Legal Name
+    </label>
+
+
+    <input
+      type="text"
+      class="text-input"
+      placeholder="Enter your full legal name"
+
+      [ngModel]="typedName()"
+      (ngModelChange)="onTypedNameChange($event)"
+    />    
+     
+
+
+    <p
+      class="validation-msg"
+      *ngIf="!typedName().trim()"
+    >
+      Full legal name is required to generate a signature.
+    </p>
+
+
+    <!-- PREVIEW -->
+
+    <div
+      class="typed-preview"
+      *ngIf="typedName().trim()"
+    >
+
+      <span class="field-label">
+        Signature Preview
+      </span>
+
+      <p class="typed-signature">
+        {{ typedName() }}
+      </p>
+
+    </div>
+
+
+    <!-- SAVE -->
+
+    <div class="panel-actions">
+
+      <button
+        type="button"
+        class="btn-primary"
+
+        [disabled]="!typedName().trim()"
+
+        (click)="saveTypedSignature()"
+      >
+        &#10003; Save Signature
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       UPLOAD SIGNATURE
+       ===================================================== -->
+
+  <div
+    class="method-panel"
+    *ngIf="selectedMethod() === 'upload'"
+  >
+
+    <div class="panel-heading">
+
+      <span class="icon-circle">
+        &#8593;
+      </span>
+
+      <div class="panel-heading-content">
+
+        <strong>
+          Upload Your Signature
+        </strong>
+
+        <p>
+          Upload an image of your signature
+          (PNG, JPG, or JPEG, max 2MB).
+        </p>
+
+      </div>
+
+      <span
+        class="selected-badge"
+        *ngIf="isSaved()"
+      >
+        &#10003; Selected
+      </span>
+
+    </div>
+
+
+    <!-- UPLOAD -->
+
+    <label
+      class="upload-dropzone"
+      *ngIf="!uploadedPreview()"
+    >
+
+      <span>
+        &#8593; Choose Signature File
+      </span>
+
+      <input
+        type="file"
+        accept="image/png,image/jpeg,image/jpg"
+
+        (change)="onFileSelected($event)"
+
+        hidden
+      />
+
+    </label>
+
+
+    <!-- ERROR -->
+
+    <p
+      class="validation-msg"
+      *ngIf="uploadError()"
+    >
+      {{ uploadError() }}
+    </p>
+
+
+    <!-- PREVIEW -->
+
+    <div
+      class="upload-preview"
+      *ngIf="uploadedPreview()"
+    >
+
+      <span class="field-label">
+        Preview
+      </span>
+
+
+      <img
+        [src]="uploadedPreview()"         
+        alt="Uploaded signature preview"
+      />
+
+
+      <button
+        type="button"
+        class="btn-outline" 
+        (click)="removeUploadedSignature()"
+      >
+        &#10005; Remove
+      </button>
+
+    </div>
+
+  </div>
+
+</section>

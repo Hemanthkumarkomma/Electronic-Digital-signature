@@ -1,0 +1,6 @@
+@ElectronicSignature.API_HostAddress = http://localhost:5022
+
+GET {{ElectronicSignature.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,810 @@
+/* =========================================================
+   HOST
+   ========================================================= */
+
+:host {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MAIN CARD
+   ========================================================= */
+
+.signature-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e7ee;
+  border-radius: 14px;
+
+  padding: 30px;
+
+  box-shadow: 0 3px 12px rgba(15, 45, 75, 0.06);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.signature-header {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 14px;
+
+  margin-bottom: 22px;
+}
+
+.signature-header .icon {
+  width: 44px;
+  height: 44px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  background: #0f6bbd;
+  color: #ffffff;
+
+  font-size: 1.3rem;
+}
+
+.signature-header h3 {
+  margin: 0 0 5px;
+
+  color: #102f50;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.signature-header p {
+  margin: 0;
+
+  color: #536579;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   INFORMATION BANNER
+   ========================================================= */
+
+.info-banner {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  background: #eaf3fc;
+
+  border: 1px solid #cfe4f7;
+
+  border-radius: 10px;
+
+  padding: 16px 18px;
+
+  margin-bottom: 26px;
+}
+
+.info-banner .icon {
+  color: #0f6bbd;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  flex-shrink: 0;
+}
+
+.info-banner p {
+  margin: 0;
+
+  color: #2c4258;
+
+  font-size: 14px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   SECTION LABEL
+   ========================================================= */
+
+.section-label {
+  margin: 0 0 13px;
+
+  color: #173b5e;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   METHOD SELECTOR
+   ========================================================= */
+
+.method-selector {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+
+  margin-bottom: 26px;
+}
+
+.method-option {
+  width: 100%;
+
+  min-height: 100px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 11px;
+
+  text-align: left;
+
+  padding: 18px;
+
+  border: 2px solid #d8e1e9;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  color: #173b5e;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.method-option:hover {
+  border-color: #8fc0ea;
+
+  box-shadow:
+    0 3px 10px rgba(15, 107, 189, 0.08);
+}
+
+.method-option.selected {
+  border-color: #0f6bbd;
+
+  background: #eaf3fc;
+
+  box-shadow:
+    0 3px 10px rgba(15, 107, 189, 0.08);
+}
+
+
+/* =========================================================
+   RADIO
+   ========================================================= */
+
+.radio {
+  width: 19px;
+  height: 19px;
+
+  border-radius: 50%;
+
+  border: 2px solid #9aabbb;
+
+  flex-shrink: 0;
+
+  margin-top: 2px;
+
+  position: relative;
+}
+
+.radio.checked {
+  border-color: #0f6bbd;
+}
+
+.radio.checked::after {
+  content: '';
+
+  position: absolute;
+
+  inset: 3px;
+
+  border-radius: 50%;
+
+  background: #0f6bbd;
+}
+
+
+/* =========================================================
+   METHOD ICON
+   ========================================================= */
+
+.method-icon {
+  color: #0f6bbd;
+
+  font-size: 20px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   METHOD TEXT
+   ========================================================= */
+
+.method-text {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.method-text strong {
+  color: #1f2d3d;
+
+  font-size: 15px;
+
+  font-weight: 700;
+}
+
+.method-text small {
+  color: #6a7a8b;
+
+  font-size: 13px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   METHOD PANEL
+   ========================================================= */
+
+.method-panel {
+  width: 100%;
+
+  border: 1px solid #dfe6ed;
+
+  border-radius: 12px;
+
+  padding: 24px;
+
+  background: #fbfcfe;
+}
+
+
+/* =========================================================
+   PANEL HEADER
+   ========================================================= */
+
+.panel-heading {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 13px;
+
+  margin-bottom: 20px;
+}
+
+.panel-heading-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.icon-circle {
+  width: 38px;
+  height: 38px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #0f6bbd;
+
+  color: #ffffff;
+
+  font-size: 17px;
+}
+
+.panel-heading strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #1f2d3d;
+
+  font-size: 16px;
+}
+
+.panel-heading p {
+  margin: 0;
+
+  color: #6a7a8b;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+.selected-badge {
+  margin-left: auto;
+
+  background: #0f6bbd;
+
+  color: #ffffff;
+
+  border-radius: 999px;
+
+  padding: 5px 13px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   CANVAS WRAPPER
+   ========================================================= */
+
+.canvas-wrapper {
+  width: 100%;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   SIGNATURE CANVAS
+   ========================================================= */
+
+.signature-canvas {
+  display: block;
+
+  width: 100%;
+
+  /*
+    IMPORTANT:
+    The canvas internal size is 760 x 220.
+    The TypeScript coordinate calculation scales
+    mouse/touch coordinates to this internal size.
+  */
+
+  height: 280px;
+
+  border: 2px dashed #aebdca;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  cursor: crosshair;
+
+  touch-action: none;
+
+  user-select: none;
+
+  -webkit-user-select: none;
+
+  -webkit-touch-callout: none;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.panel-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 18px;
+}
+
+.btn-outline,
+.btn-primary {
+  min-height: 48px;
+
+  padding: 0 20px;
+
+  border-radius: 8px;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.btn-outline {
+  border: 1px solid #c3d0dc;
+
+  background: #ffffff;
+
+  color: #33445a;
+}
+
+.btn-outline:hover {
+  background: #f4f7fa;
+
+  border-color: #9eb2c5;
+}
+
+.btn-primary {
+  border: 1px solid #0f6bbd;
+
+  background: #0f6bbd;
+
+  color: #ffffff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #0c5d9f;
+
+  border-color: #0c5d9f;
+}
+
+.btn-primary:disabled {
+  background: #a9c6e0;
+
+  border-color: #a9c6e0;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   VALIDATION
+   ========================================================= */
+
+.validation-msg {
+  margin: 8px 0 0;
+
+  color: #c0392b;
+
+  font-size: 13px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+.field-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #1f2d3d;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   TEXT INPUT
+   ========================================================= */
+
+.text-input {
+  width: 100%;
+
+  height: 52px;
+
+  padding: 0 14px;
+
+  border-radius: 8px;
+
+  border: 1px solid #c3d0dc;
+
+  background: #ffffff;
+
+  color: #173b5e;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition: 0.2s ease;
+}
+
+.text-input:focus {
+  border-color: #0f6bbd;
+
+  box-shadow:
+    0 0 0 3px rgba(15, 107, 189, 0.12);
+}
+
+
+/* =========================================================
+   TYPED SIGNATURE PREVIEW
+   ========================================================= */
+
+.typed-preview {
+  margin-top: 22px;
+
+  padding: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e7ee;
+
+  border-radius: 10px;
+}
+
+.typed-signature {
+  margin: 8px 0 0;
+
+  padding: 10px 6px 14px;
+
+  border-bottom: 1px solid #c3d0dc;
+
+  color: #1f2d3d;
+
+  font-family:
+    'Brush Script MT',
+    'Segoe Script',
+    cursive;
+
+  font-size: 2.8rem;
+
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   UPLOAD DROPZONE
+   ========================================================= */
+
+.upload-dropzone {
+  width: 100%;
+
+  min-height: 190px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  border: 2px dashed #aebdca;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #0f6bbd;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.upload-dropzone:hover {
+  background: #f5f9fd;
+
+  border-color: #0f6bbd;
+}
+
+
+/* =========================================================
+   UPLOAD PREVIEW
+   ========================================================= */
+
+.upload-preview {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  padding: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e7ee;
+
+  border-radius: 10px;
+}
+
+.upload-preview img {
+  display: block;
+
+  max-width: 100%;
+
+  width: auto;
+
+  max-height: 260px;
+
+  border: 1px solid #c3d0dc;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1400px) {
+
+  .signature-card {
+    padding: 34px;
+  }
+
+  .signature-header h3 {
+    font-size: 22px;
+  }
+
+  .signature-header p {
+    font-size: 15px;
+  }
+
+  .method-option {
+    min-height: 115px;
+
+    padding: 20px;
+  }
+
+  .signature-canvas {
+    height: 320px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+  .method-selector {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .signature-canvas {
+    height: 250px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .signature-card {
+    padding: 18px;
+
+    border-radius: 11px;
+  }
+
+  .signature-header h3 {
+    font-size: 18px;
+  }
+
+  .signature-header p {
+    font-size: 13px;
+  }
+
+  .info-banner {
+    padding: 13px;
+  }
+
+  .info-banner p {
+    font-size: 13px;
+  }
+
+  .method-selector {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .method-option {
+    min-height: 85px;
+
+    padding: 15px;
+  }
+
+  .method-panel {
+    padding: 17px;
+  }
+
+  .panel-heading {
+    flex-wrap: wrap;
+  }
+
+  .selected-badge {
+    margin-left: 0;
+  }
+
+  .signature-canvas {
+    height: 220px;
+  }
+
+  .panel-actions {
+    flex-wrap: wrap;                       
+  }
+
+  .btn-outline,
+  .btn-primary {
+    min-height: 44px;
+
+    padding: 0 16px;
+  }
+
+  .typed-signature {
+    font-size: 2.2rem;
+  }
+
+  .upload-dropzone {
+    min-height: 150px;
+  }
+}
